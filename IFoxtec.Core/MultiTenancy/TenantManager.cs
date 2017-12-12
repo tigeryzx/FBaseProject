@@ -3,6 +3,8 @@ using Abp.Domain.Repositories;
 using Abp.MultiTenancy;
 using IFoxtec.Authorization.Users;
 using IFoxtec.Editions;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace IFoxtec.MultiTenancy
 {
@@ -21,6 +23,14 @@ namespace IFoxtec.MultiTenancy
                 featureValueStore
             )
         {
+        }
+
+        public async Task<IQueryable<Tenant>> GetActiveTenant()
+        {
+            return await Task.Run(() =>
+            {
+                return base.TenantRepository.GetAll().Where(x => x.IsActive);
+            });
         }
     }
 }
