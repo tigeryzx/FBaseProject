@@ -1,0 +1,433 @@
+DEBUG 2017-12-12 09:49:08,438 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2017-12-12 09:49:08,460 [1    ] Abp.Modules.AbpModuleManager             - Found 17 ABP modules in total.
+DEBUG 2017-12-12 09:49:08,469 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: IFoxtec.Web.IFoxtecWebModule, IFoxtec.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 09:49:08,472 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: IFoxtec.IFoxtecDataModule, IFoxtec.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 09:49:08,473 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFramework.AbpZeroEntityFrameworkModule, Abp.Zero.EntityFramework, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 09:49:08,473 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.Zero, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 09:49:08,474 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 09:49:08,474 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 09:49:08,474 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 09:49:08,475 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 09:49:08,475 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: IFoxtec.IFoxtecCoreModule, IFoxtec.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 09:49:08,475 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: IFoxtec.IFoxtecApplicationModule, IFoxtec.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 09:49:08,476 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 09:49:08,476 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: IFoxtec.Api.IFoxtecWebApiModule, IFoxtec.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 09:49:08,476 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 09:49:08,476 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 09:49:08,476 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 09:49:08,477 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.SignalR.AbpWebSignalRModule, Abp.Web.SignalR, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 09:49:08,477 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 09:49:08,483 [1    ] Abp.Modules.AbpModuleManager             - 17 modules loaded.
+DEBUG 2017-12-12 09:49:08,838 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-12-12 09:49:08,838 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-12-12 09:49:08,838 [1    ] o.Configuration.LanguageManagementConfig - Converted IFoxtec (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-12-12 09:49:08,838 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-12-12 09:49:09,232 [1    ] EntityFramework.AbpEntityFrameworkModule - Registering DbContext: IFoxtec.EntityFramework.IFoxtecDbContext, IFoxtec.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 09:49:12,640 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2017-12-12 09:49:12,676 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2017-12-12 09:49:12,684 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2017-12-12 09:49:12,687 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: IFoxtec
+DEBUG 2017-12-12 09:49:12,688 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2017-12-12 09:49:12,776 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2017-12-12 09:49:12,831 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 13 classes define auto mapping attributes
+DEBUG 2017-12-12 09:49:12,831 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IFoxtec.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2017-12-12 09:49:12,835 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IFoxtec.Sessions.Dto.UserLoginInfoDto
+DEBUG 2017-12-12 09:49:12,835 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IFoxtec.Users.Dto.CreateUserDto
+DEBUG 2017-12-12 09:49:12,835 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IFoxtec.Users.Dto.UpdateUserDto
+DEBUG 2017-12-12 09:49:12,835 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IFoxtec.Users.Dto.UserDto
+DEBUG 2017-12-12 09:49:12,835 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IFoxtec.Roles.Dto.CreateRoleDto
+DEBUG 2017-12-12 09:49:12,835 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IFoxtec.Roles.Dto.PermissionDto
+DEBUG 2017-12-12 09:49:12,836 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IFoxtec.Roles.Dto.RoleDto
+DEBUG 2017-12-12 09:49:12,836 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IFoxtec.MultiTenancy.Dto.CreateTenantDto
+DEBUG 2017-12-12 09:49:12,836 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IFoxtec.MultiTenancy.Dto.EditTenantDto
+DEBUG 2017-12-12 09:49:12,836 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IFoxtec.MultiTenancy.Dto.TenantDto
+DEBUG 2017-12-12 09:49:12,836 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IFoxtec.Web.Models.Account.TenantChangeViewModel
+DEBUG 2017-12-12 09:49:12,836 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IFoxtec.Web.Models.Account.TenantSelectionViewModel+TenantInfo
+DEBUG 2017-12-12 09:49:14,342 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'IFoxtec.Sessions.ISessionAppService' with service name 'app/session'.
+DEBUG 2017-12-12 09:49:14,343 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'IFoxtec.Users.IUserAppService' with service name 'app/user'.
+DEBUG 2017-12-12 09:49:14,344 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'IFoxtec.Roles.IRoleAppService' with service name 'app/role'.
+DEBUG 2017-12-12 09:49:14,345 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'IFoxtec.MultiTenancy.ITenantAppService' with service name 'app/tenant'.
+DEBUG 2017-12-12 09:49:14,346 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'IFoxtec.Configuration.IConfigurationAppService' with service name 'app/configuration'.
+DEBUG 2017-12-12 09:49:14,346 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'IFoxtec.Authorization.Accounts.IAccountAppService' with service name 'app/account'.
+DEBUG 2017-12-12 10:03:12,150 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2017-12-12 10:03:12,166 [1    ] Abp.Modules.AbpModuleManager             - Found 17 ABP modules in total.
+DEBUG 2017-12-12 10:03:12,178 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: IFoxtec.Web.IFoxtecWebModule, IFoxtec.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 10:03:12,180 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: IFoxtec.IFoxtecDataModule, IFoxtec.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 10:03:12,180 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFramework.AbpZeroEntityFrameworkModule, Abp.Zero.EntityFramework, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 10:03:12,180 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.Zero, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 10:03:12,180 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 10:03:12,180 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 10:03:12,181 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 10:03:12,181 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 10:03:12,181 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: IFoxtec.IFoxtecCoreModule, IFoxtec.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 10:03:12,181 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: IFoxtec.IFoxtecApplicationModule, IFoxtec.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 10:03:12,181 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 10:03:12,182 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: IFoxtec.Api.IFoxtecWebApiModule, IFoxtec.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 10:03:12,182 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 10:03:12,182 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 10:03:12,182 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 10:03:12,182 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.SignalR.AbpWebSignalRModule, Abp.Web.SignalR, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 10:03:12,182 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 10:03:12,186 [1    ] Abp.Modules.AbpModuleManager             - 17 modules loaded.
+DEBUG 2017-12-12 10:03:12,446 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-12-12 10:03:12,446 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-12-12 10:03:12,446 [1    ] o.Configuration.LanguageManagementConfig - Converted IFoxtec (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-12-12 10:03:12,446 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-12-12 10:03:12,771 [1    ] EntityFramework.AbpEntityFrameworkModule - Registering DbContext: IFoxtec.EntityFramework.IFoxtecDbContext, IFoxtec.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 10:03:14,937 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2017-12-12 10:03:14,960 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2017-12-12 10:03:14,968 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2017-12-12 10:03:14,971 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: IFoxtec
+DEBUG 2017-12-12 10:03:14,973 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2017-12-12 10:03:15,054 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2017-12-12 10:03:15,111 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 13 classes define auto mapping attributes
+DEBUG 2017-12-12 10:03:15,111 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IFoxtec.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2017-12-12 10:03:15,114 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IFoxtec.Sessions.Dto.UserLoginInfoDto
+DEBUG 2017-12-12 10:03:15,114 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IFoxtec.Users.Dto.CreateUserDto
+DEBUG 2017-12-12 10:03:15,115 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IFoxtec.Users.Dto.UpdateUserDto
+DEBUG 2017-12-12 10:03:15,115 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IFoxtec.Users.Dto.UserDto
+DEBUG 2017-12-12 10:03:15,115 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IFoxtec.Roles.Dto.CreateRoleDto
+DEBUG 2017-12-12 10:03:15,115 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IFoxtec.Roles.Dto.PermissionDto
+DEBUG 2017-12-12 10:03:15,115 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IFoxtec.Roles.Dto.RoleDto
+DEBUG 2017-12-12 10:03:15,115 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IFoxtec.MultiTenancy.Dto.CreateTenantDto
+DEBUG 2017-12-12 10:03:15,115 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IFoxtec.MultiTenancy.Dto.EditTenantDto
+DEBUG 2017-12-12 10:03:15,115 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IFoxtec.MultiTenancy.Dto.TenantDto
+DEBUG 2017-12-12 10:03:15,115 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IFoxtec.Web.Models.Account.TenantChangeViewModel
+DEBUG 2017-12-12 10:03:15,115 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IFoxtec.Web.Models.Account.TenantSelectionViewModel+TenantInfo
+DEBUG 2017-12-12 10:03:16,582 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'IFoxtec.Sessions.ISessionAppService' with service name 'app/session'.
+DEBUG 2017-12-12 10:03:16,583 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'IFoxtec.Users.IUserAppService' with service name 'app/user'.
+DEBUG 2017-12-12 10:03:16,584 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'IFoxtec.Roles.IRoleAppService' with service name 'app/role'.
+DEBUG 2017-12-12 10:03:16,585 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'IFoxtec.MultiTenancy.ITenantAppService' with service name 'app/tenant'.
+DEBUG 2017-12-12 10:03:16,586 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'IFoxtec.Configuration.IConfigurationAppService' with service name 'app/configuration'.
+DEBUG 2017-12-12 10:03:16,587 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'IFoxtec.Authorization.Accounts.IAccountAppService' with service name 'app/account'.
+WARN  2017-12-12 10:03:21,131 [8    ] Abp.Logging.LogHelper                    - Abp.Authorization.AbpAuthorizationException: Current user did not login to the application!
+   at Abp.Authorization.AuthorizationHelper.<AuthorizeAsync>d__19.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Abp.Authorization.AuthorizationHelper.<CheckPermissions>d__22.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Abp.Authorization.AuthorizationHelper.<AuthorizeAsync>d__20.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException(Task task)
+   at Nito.AsyncEx.AsyncContext.<>c__DisplayClass15_0.<Run>b__0(Task t)
+   at System.Threading.Tasks.ContinuationTaskFromTask.InnerInvoke()
+   at System.Threading.Tasks.Task.Execute()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException(Task task)
+   at Nito.AsyncEx.AsyncContext.Run(Func`1 action)
+   at Abp.Authorization.AuthorizationHelperExtensions.Authorize(IAuthorizationHelper authorizationHelper, MethodInfo methodInfo, Type type)
+   at Abp.Web.Mvc.Authorization.AbpMvcAuthorizeFilter.OnAuthorization(AuthorizationContext filterContext)
+Abp.Authorization.AbpAuthorizationException: Current user did not login to the application!
+   at Abp.Authorization.AuthorizationHelper.<AuthorizeAsync>d__19.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Abp.Authorization.AuthorizationHelper.<CheckPermissions>d__22.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Abp.Authorization.AuthorizationHelper.<AuthorizeAsync>d__20.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException(Task task)
+   at Nito.AsyncEx.AsyncContext.<>c__DisplayClass15_0.<Run>b__0(Task t)
+   at System.Threading.Tasks.ContinuationTaskFromTask.InnerInvoke()
+   at System.Threading.Tasks.Task.Execute()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException(Task task)
+   at Nito.AsyncEx.AsyncContext.Run(Func`1 action)
+   at Abp.Authorization.AuthorizationHelperExtensions.Authorize(IAuthorizationHelper authorizationHelper, MethodInfo methodInfo, Type type)
+   at Abp.Web.Mvc.Authorization.AbpMvcAuthorizeFilter.OnAuthorization(AuthorizationContext filterContext)
+DEBUG 2017-12-12 10:04:23,347 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"cd1fb464-4ec4-4381-8171-d0509a612cba","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2017-12-12T10:04:23.3418634+08:00","Properties":{}}
+DEBUG 2017-12-12 10:04:23,417 [23   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: cd1fb464-4ec4-4381-8171-d0509a612cba
+DEBUG 2017-12-12 10:04:30,154 [24   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: cd1fb464-4ec4-4381-8171-d0509a612cba
+DEBUG 2017-12-12 10:04:31,667 [22   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"8eb721f9-6186-4627-93f1-ea61f66b7fe7","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2017-12-12T10:04:31.6673396+08:00","Properties":{}}
+DEBUG 2017-12-12 10:04:31,705 [24   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 8eb721f9-6186-4627-93f1-ea61f66b7fe7
+WARN  2017-12-12 10:04:51,730 [18   ] naries.DictionaryBasedLocalizationSource - Can not find 'Refresh' in localization source 'IFoxtec'!
+DEBUG 2017-12-12 10:06:52,285 [16   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 8eb721f9-6186-4627-93f1-ea61f66b7fe7
+DEBUG 2017-12-12 11:06:40,885 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2017-12-12 11:06:40,925 [1    ] Abp.Modules.AbpModuleManager             - Found 17 ABP modules in total.
+DEBUG 2017-12-12 11:06:40,931 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: IFoxtec.Web.IFoxtecWebModule, IFoxtec.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 11:06:40,933 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: IFoxtec.IFoxtecDataModule, IFoxtec.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 11:06:40,933 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFramework.AbpZeroEntityFrameworkModule, Abp.Zero.EntityFramework, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 11:06:40,933 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.Zero, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 11:06:40,933 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 11:06:40,933 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 11:06:40,934 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 11:06:40,934 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 11:06:40,934 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: IFoxtec.IFoxtecCoreModule, IFoxtec.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 11:06:40,934 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: IFoxtec.IFoxtecApplicationModule, IFoxtec.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 11:06:40,934 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 11:06:40,934 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: IFoxtec.Api.IFoxtecWebApiModule, IFoxtec.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 11:06:40,935 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 11:06:40,935 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 11:06:40,935 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 11:06:40,935 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.SignalR.AbpWebSignalRModule, Abp.Web.SignalR, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 11:06:40,935 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 11:06:40,938 [1    ] Abp.Modules.AbpModuleManager             - 17 modules loaded.
+DEBUG 2017-12-12 11:06:41,229 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-12-12 11:06:41,229 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-12-12 11:06:41,229 [1    ] o.Configuration.LanguageManagementConfig - Converted IFoxtec (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-12-12 11:06:41,229 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-12-12 11:06:41,578 [1    ] EntityFramework.AbpEntityFrameworkModule - Registering DbContext: IFoxtec.EntityFramework.IFoxtecDbContext, IFoxtec.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 11:06:44,330 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2017-12-12 11:06:44,350 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2017-12-12 11:06:44,357 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2017-12-12 11:06:44,361 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: IFoxtec
+DEBUG 2017-12-12 11:06:44,363 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2017-12-12 11:06:44,410 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2017-12-12 11:06:44,461 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 13 classes define auto mapping attributes
+DEBUG 2017-12-12 11:06:44,461 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IFoxtec.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2017-12-12 11:06:44,464 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IFoxtec.Sessions.Dto.UserLoginInfoDto
+DEBUG 2017-12-12 11:06:44,464 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IFoxtec.Users.Dto.CreateUserDto
+DEBUG 2017-12-12 11:06:44,464 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IFoxtec.Users.Dto.UpdateUserDto
+DEBUG 2017-12-12 11:06:44,464 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IFoxtec.Users.Dto.UserDto
+DEBUG 2017-12-12 11:06:44,464 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IFoxtec.Roles.Dto.CreateRoleDto
+DEBUG 2017-12-12 11:06:44,464 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IFoxtec.Roles.Dto.PermissionDto
+DEBUG 2017-12-12 11:06:44,464 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IFoxtec.Roles.Dto.RoleDto
+DEBUG 2017-12-12 11:06:44,465 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IFoxtec.MultiTenancy.Dto.CreateTenantDto
+DEBUG 2017-12-12 11:06:44,465 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IFoxtec.MultiTenancy.Dto.EditTenantDto
+DEBUG 2017-12-12 11:06:44,465 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IFoxtec.MultiTenancy.Dto.TenantDto
+DEBUG 2017-12-12 11:06:44,465 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IFoxtec.Web.Models.Account.TenantChangeViewModel
+DEBUG 2017-12-12 11:06:44,465 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IFoxtec.Web.Models.Account.TenantSelectionViewModel+TenantInfo
+DEBUG 2017-12-12 11:06:45,636 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'IFoxtec.Sessions.ISessionAppService' with service name 'app/session'.
+DEBUG 2017-12-12 11:06:45,637 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'IFoxtec.Users.IUserAppService' with service name 'app/user'.
+DEBUG 2017-12-12 11:06:45,638 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'IFoxtec.Roles.IRoleAppService' with service name 'app/role'.
+DEBUG 2017-12-12 11:06:45,639 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'IFoxtec.MultiTenancy.ITenantAppService' with service name 'app/tenant'.
+DEBUG 2017-12-12 11:06:45,640 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'IFoxtec.Configuration.IConfigurationAppService' with service name 'app/configuration'.
+DEBUG 2017-12-12 11:06:45,641 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'IFoxtec.Authorization.Accounts.IAccountAppService' with service name 'app/account'.
+DEBUG 2017-12-12 11:06:57,148 [5    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"f832f763-90b1-4cd0-83e8-47d5deb55a7c","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2017-12-12T11:06:57.1375683+08:00","Properties":{}}
+DEBUG 2017-12-12 11:06:57,212 [5    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: f832f763-90b1-4cd0-83e8-47d5deb55a7c
+DEBUG 2017-12-12 11:16:16,207 [66   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: f832f763-90b1-4cd0-83e8-47d5deb55a7c
+DEBUG 2017-12-12 11:19:52,116 [80   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"146b18e2-8ece-4eda-9ebf-47558dde7481","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2017-12-12T11:19:52.1168945+08:00","Properties":{}}
+DEBUG 2017-12-12 11:19:52,132 [59   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 146b18e2-8ece-4eda-9ebf-47558dde7481
+DEBUG 2017-12-12 11:19:53,228 [79   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 146b18e2-8ece-4eda-9ebf-47558dde7481
+DEBUG 2017-12-12 11:21:33,035 [84   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"aef997d1-936d-4fbd-83d6-aee54bbc5d02","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2017-12-12T11:21:33.0356668+08:00","Properties":{}}
+DEBUG 2017-12-12 11:21:33,050 [83   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: aef997d1-936d-4fbd-83d6-aee54bbc5d02
+WARN  2017-12-12 11:34:07,539 [55   ] nHandling.AbpApiExceptionFilterAttribute - Login failed!
+Abp.UI.UserFriendlyException: Login failed!
+   at IFoxtec.Api.Controllers.AccountController.<GetLoginResultAsync>d__8.MoveNext() in E:\Yzx_File\项目代码\IFoxtec.ABP\src\IFoxtec.WebApi\Api\Controllers\AccountController.cs:line 66
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at IFoxtec.Api.Controllers.AccountController.<Authenticate>d__7.MoveNext() in E:\Yzx_File\项目代码\IFoxtec.ABP\src\IFoxtec.WebApi\Api\Controllers\AccountController.cs:line 42
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Threading.Tasks.TaskHelpersExtensions.<CastToObject>d__3`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Abp.WebApi.Uow.AbpApiUowFilter.<ExecuteActionFilterAsync>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Abp.WebApi.Validation.AbpApiValidationFilter.<ExecuteActionFilterAsync>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Abp.WebApi.Auditing.AbpApiAuditFilter.<ExecuteActionFilterAsync>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Abp.WebApi.Auditing.AbpApiAuditFilter.<ExecuteActionFilterAsync>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Abp.WebApi.Security.AntiForgery.AbpAntiForgeryApiFilter.<ExecuteAuthorizationFilterAsync>d__10.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Abp.WebApi.Authorization.AbpApiAuthorizeFilter.<ExecuteAuthorizationFilterAsync>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.AuthenticationFilterResult.<ExecuteAsync>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()
+WARN  2017-12-12 11:34:16,725 [79   ] nHandling.AbpApiExceptionFilterAttribute - Login failed!
+Abp.UI.UserFriendlyException: Login failed!
+   at IFoxtec.Api.Controllers.AccountController.<GetLoginResultAsync>d__8.MoveNext() in E:\Yzx_File\项目代码\IFoxtec.ABP\src\IFoxtec.WebApi\Api\Controllers\AccountController.cs:line 66
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at IFoxtec.Api.Controllers.AccountController.<Authenticate>d__7.MoveNext() in E:\Yzx_File\项目代码\IFoxtec.ABP\src\IFoxtec.WebApi\Api\Controllers\AccountController.cs:line 42
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Threading.Tasks.TaskHelpersExtensions.<CastToObject>d__3`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Abp.WebApi.Uow.AbpApiUowFilter.<ExecuteActionFilterAsync>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Abp.WebApi.Validation.AbpApiValidationFilter.<ExecuteActionFilterAsync>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Abp.WebApi.Auditing.AbpApiAuditFilter.<ExecuteActionFilterAsync>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Abp.WebApi.Auditing.AbpApiAuditFilter.<ExecuteActionFilterAsync>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Abp.WebApi.Security.AntiForgery.AbpAntiForgeryApiFilter.<ExecuteAuthorizationFilterAsync>d__10.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Abp.WebApi.Authorization.AbpApiAuthorizeFilter.<ExecuteAuthorizationFilterAsync>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.AuthenticationFilterResult.<ExecuteAsync>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()
+DEBUG 2017-12-12 11:41:33,445 [110  ] Abp.Modules.AbpModuleManager             - Shutting down has been started
+DEBUG 2017-12-12 11:41:33,446 [110  ] Abp.BackgroundJobs.BackgroundJobManager  - Stop background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2017-12-12 11:41:33,447 [110  ] Abp.BackgroundJobs.BackgroundJobManager  - WaitToStop background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2017-12-12 11:41:33,447 [110  ] Abp.Modules.AbpModuleManager             - Shutting down completed.
+DEBUG 2017-12-12 11:41:37,846 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2017-12-12 11:41:39,112 [1    ] Abp.Modules.AbpModuleManager             - Found 17 ABP modules in total.
+DEBUG 2017-12-12 11:41:39,124 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: IFoxtec.Web.IFoxtecWebModule, IFoxtec.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 11:41:39,127 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: IFoxtec.IFoxtecDataModule, IFoxtec.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 11:41:39,127 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFramework.AbpZeroEntityFrameworkModule, Abp.Zero.EntityFramework, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 11:41:39,128 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.Zero, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 11:41:39,128 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 11:41:39,128 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 11:41:39,129 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 11:41:39,130 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 11:41:39,130 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: IFoxtec.IFoxtecCoreModule, IFoxtec.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 11:41:39,131 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: IFoxtec.IFoxtecApplicationModule, IFoxtec.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 11:41:39,131 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 11:41:39,131 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: IFoxtec.Api.IFoxtecWebApiModule, IFoxtec.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 11:41:39,132 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 11:41:39,132 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 11:41:39,132 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 11:41:39,132 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.SignalR.AbpWebSignalRModule, Abp.Web.SignalR, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 11:41:39,133 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 11:41:39,139 [1    ] Abp.Modules.AbpModuleManager             - 17 modules loaded.
+DEBUG 2017-12-12 11:41:39,978 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-12-12 11:41:39,978 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-12-12 11:41:39,978 [1    ] o.Configuration.LanguageManagementConfig - Converted IFoxtec (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-12-12 11:41:39,978 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-12-12 11:41:40,437 [1    ] EntityFramework.AbpEntityFrameworkModule - Registering DbContext: IFoxtec.EntityFramework.IFoxtecDbContext, IFoxtec.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 11:41:41,344 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2017-12-12 11:41:41,349 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2017-12-12 11:41:41,355 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2017-12-12 11:41:41,357 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: IFoxtec
+DEBUG 2017-12-12 11:41:41,358 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2017-12-12 11:41:41,402 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2017-12-12 11:41:41,442 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 13 classes define auto mapping attributes
+DEBUG 2017-12-12 11:41:41,442 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IFoxtec.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2017-12-12 11:41:41,446 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IFoxtec.Sessions.Dto.UserLoginInfoDto
+DEBUG 2017-12-12 11:41:41,446 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IFoxtec.Users.Dto.CreateUserDto
+DEBUG 2017-12-12 11:41:41,446 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IFoxtec.Users.Dto.UpdateUserDto
+DEBUG 2017-12-12 11:41:41,446 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IFoxtec.Users.Dto.UserDto
+DEBUG 2017-12-12 11:41:41,446 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IFoxtec.Roles.Dto.CreateRoleDto
+DEBUG 2017-12-12 11:41:41,447 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IFoxtec.Roles.Dto.PermissionDto
+DEBUG 2017-12-12 11:41:41,447 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IFoxtec.Roles.Dto.RoleDto
+DEBUG 2017-12-12 11:41:41,447 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IFoxtec.MultiTenancy.Dto.CreateTenantDto
+DEBUG 2017-12-12 11:41:41,447 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IFoxtec.MultiTenancy.Dto.EditTenantDto
+DEBUG 2017-12-12 11:41:41,447 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IFoxtec.MultiTenancy.Dto.TenantDto
+DEBUG 2017-12-12 11:41:41,447 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IFoxtec.Web.Models.Account.TenantChangeViewModel
+DEBUG 2017-12-12 11:41:41,447 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IFoxtec.Web.Models.Account.TenantSelectionViewModel+TenantInfo
+DEBUG 2017-12-12 11:41:42,366 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'IFoxtec.Sessions.ISessionAppService' with service name 'app/session'.
+DEBUG 2017-12-12 11:41:42,367 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'IFoxtec.Users.IUserAppService' with service name 'app/user'.
+DEBUG 2017-12-12 11:41:42,368 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'IFoxtec.Roles.IRoleAppService' with service name 'app/role'.
+DEBUG 2017-12-12 11:41:42,369 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'IFoxtec.MultiTenancy.ITenantAppService' with service name 'app/tenant'.
+DEBUG 2017-12-12 11:41:42,370 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'IFoxtec.Configuration.IConfigurationAppService' with service name 'app/configuration'.
+DEBUG 2017-12-12 11:41:42,371 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'IFoxtec.Authorization.Accounts.IAccountAppService' with service name 'app/account'.
+DEBUG 2017-12-12 11:41:50,163 [104  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is reconnected: {"ConnectionId":"aef997d1-936d-4fbd-83d6-aee54bbc5d02","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2017-12-12T11:41:50.0902783+08:00","Properties":{}}
+DEBUG 2017-12-12 11:41:50,163 [23   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected (on reconnected event): {"ConnectionId":"aef997d1-936d-4fbd-83d6-aee54bbc5d02","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2017-12-12T11:41:50.0902783+08:00","Properties":{}}
+DEBUG 2017-12-12 11:41:50,163 [40   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected (on reconnected event): {"ConnectionId":"aef997d1-936d-4fbd-83d6-aee54bbc5d02","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2017-12-12T11:41:50.0902783+08:00","Properties":{}}
+DEBUG 2017-12-12 11:41:53,175 [24   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is reconnected: {"ConnectionId":"aef997d1-936d-4fbd-83d6-aee54bbc5d02","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2017-12-12T11:41:50.0902783+08:00","Properties":{}}
+DEBUG 2017-12-12 11:47:22,744 [40   ] Abp.Modules.AbpModuleManager             - Shutting down has been started
+DEBUG 2017-12-12 11:47:22,745 [40   ] Abp.BackgroundJobs.BackgroundJobManager  - Stop background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2017-12-12 11:47:22,745 [40   ] Abp.BackgroundJobs.BackgroundJobManager  - WaitToStop background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2017-12-12 11:47:22,745 [40   ] Abp.Modules.AbpModuleManager             - Shutting down completed.
+DEBUG 2017-12-12 12:56:39,260 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2017-12-12 12:56:39,296 [1    ] Abp.Modules.AbpModuleManager             - Found 17 ABP modules in total.
+DEBUG 2017-12-12 12:56:39,303 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: IFoxtec.Web.IFoxtecWebModule, IFoxtec.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 12:56:39,305 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: IFoxtec.IFoxtecDataModule, IFoxtec.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 12:56:39,305 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFramework.AbpZeroEntityFrameworkModule, Abp.Zero.EntityFramework, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 12:56:39,305 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.Zero, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 12:56:39,305 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 12:56:39,306 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 12:56:39,306 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 12:56:39,306 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 12:56:39,306 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: IFoxtec.IFoxtecCoreModule, IFoxtec.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 12:56:39,306 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: IFoxtec.IFoxtecApplicationModule, IFoxtec.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 12:56:39,307 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 12:56:39,307 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: IFoxtec.Api.IFoxtecWebApiModule, IFoxtec.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 12:56:39,307 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 12:56:39,307 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 12:56:39,307 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 12:56:39,307 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.SignalR.AbpWebSignalRModule, Abp.Web.SignalR, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 12:56:39,307 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=3.2.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 12:56:39,311 [1    ] Abp.Modules.AbpModuleManager             - 17 modules loaded.
+DEBUG 2017-12-12 12:56:39,574 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-12-12 12:56:39,574 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-12-12 12:56:39,574 [1    ] o.Configuration.LanguageManagementConfig - Converted IFoxtec (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-12-12 12:56:39,574 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2017-12-12 12:56:39,903 [1    ] EntityFramework.AbpEntityFrameworkModule - Registering DbContext: IFoxtec.EntityFramework.IFoxtecDbContext, IFoxtec.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-12-12 12:56:42,415 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2017-12-12 12:56:42,437 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2017-12-12 12:56:42,445 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2017-12-12 12:56:42,447 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: IFoxtec
+DEBUG 2017-12-12 12:56:42,450 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2017-12-12 12:56:42,496 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2017-12-12 12:56:42,559 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 13 classes define auto mapping attributes
+DEBUG 2017-12-12 12:56:42,559 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IFoxtec.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2017-12-12 12:56:42,563 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IFoxtec.Sessions.Dto.UserLoginInfoDto
+DEBUG 2017-12-12 12:56:42,563 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IFoxtec.Users.Dto.CreateUserDto
+DEBUG 2017-12-12 12:56:42,563 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IFoxtec.Users.Dto.UpdateUserDto
+DEBUG 2017-12-12 12:56:42,563 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IFoxtec.Users.Dto.UserDto
+DEBUG 2017-12-12 12:56:42,563 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IFoxtec.Roles.Dto.CreateRoleDto
+DEBUG 2017-12-12 12:56:42,563 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IFoxtec.Roles.Dto.PermissionDto
+DEBUG 2017-12-12 12:56:42,563 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IFoxtec.Roles.Dto.RoleDto
+DEBUG 2017-12-12 12:56:42,563 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IFoxtec.MultiTenancy.Dto.CreateTenantDto
+DEBUG 2017-12-12 12:56:42,564 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IFoxtec.MultiTenancy.Dto.EditTenantDto
+DEBUG 2017-12-12 12:56:42,564 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IFoxtec.MultiTenancy.Dto.TenantDto
+DEBUG 2017-12-12 12:56:42,564 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IFoxtec.Web.Models.Account.TenantChangeViewModel
+DEBUG 2017-12-12 12:56:42,564 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - IFoxtec.Web.Models.Account.TenantSelectionViewModel+TenantInfo
+DEBUG 2017-12-12 12:56:43,600 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'IFoxtec.Sessions.ISessionAppService' with service name 'app/session'.
+DEBUG 2017-12-12 12:56:43,601 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'IFoxtec.Users.IUserAppService' with service name 'app/user'.
+DEBUG 2017-12-12 12:56:43,602 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'IFoxtec.Roles.IRoleAppService' with service name 'app/role'.
+DEBUG 2017-12-12 12:56:43,603 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'IFoxtec.MultiTenancy.ITenantAppService' with service name 'app/tenant'.
+DEBUG 2017-12-12 12:56:43,604 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'IFoxtec.Configuration.IConfigurationAppService' with service name 'app/configuration'.
+DEBUG 2017-12-12 12:56:43,605 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'IFoxtec.Authorization.Accounts.IAccountAppService' with service name 'app/account'.
+DEBUG 2017-12-12 12:56:57,542 [76   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"414c8c41-7907-4715-974e-688e5544f742","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2017-12-12T12:56:57.5320892+08:00","Properties":{}}
+DEBUG 2017-12-12 12:56:57,603 [76   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 414c8c41-7907-4715-974e-688e5544f742
+DEBUG 2017-12-12 12:58:07,562 [76   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 414c8c41-7907-4715-974e-688e5544f742
