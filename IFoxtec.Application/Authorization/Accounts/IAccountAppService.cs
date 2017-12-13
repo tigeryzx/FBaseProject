@@ -1,8 +1,6 @@
-﻿using System.Threading.Tasks;
-using Abp.Application.Services;
-using Abp.Application.Services.Dto;
+﻿using Abp.Application.Services;
 using IFoxtec.Authorization.Accounts.Dto;
-using IFoxtec.MultiTenancy.Dto;
+using System.Threading.Tasks;
 
 namespace IFoxtec.Authorization.Accounts
 {
@@ -12,6 +10,6 @@ namespace IFoxtec.Authorization.Accounts
 
         Task<RegisterOutput> Register(RegisterInput input);
 
-        Task<ListResultDto<TenantDto>> GetActiveTenant();
+
     }
 }

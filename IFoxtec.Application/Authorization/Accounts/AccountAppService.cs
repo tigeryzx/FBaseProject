@@ -1,12 +1,8 @@
-﻿using System.Threading.Tasks;
+﻿using Abp.Configuration;
 using Abp.Zero.Configuration;
 using IFoxtec.Authorization.Accounts.Dto;
 using IFoxtec.Authorization.Users;
-using Abp.Configuration;
-using IFoxtec.MultiTenancy.Dto;
-using Abp.AutoMapper;
-using Abp.Application.Services.Dto;
-using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace IFoxtec.Authorization.Accounts
 {
@@ -18,16 +14,6 @@ namespace IFoxtec.Authorization.Accounts
             UserRegistrationManager userRegistrationManager)
         {
             _userRegistrationManager = userRegistrationManager;
-        }
-
-        public async Task<ListResultDto<TenantDto>> GetActiveTenant()
-        {
-            var tenantList = await TenantManager.GetActiveTenant();
-            return new ListResultDto<TenantDto>()
-            {
-                Items = tenantList.MapTo<List<TenantDto>>()
-            };
-            
         }
 
         public async Task<IsTenantAvailableOutput> IsTenantAvailable(IsTenantAvailableInput input)
