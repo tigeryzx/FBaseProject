@@ -1,0 +1,23 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style x:Key="TableView_ReadOnlyView" TargetType="dxg:TableView">
+        <Setter Property="AllowEditing" Value="False"></Setter>
+        <Setter Property="AllowCascadeUpdate" Value="True"></Setter>
+        <Setter Property="ShowCheckBoxSelectorColumn" Value="True"></Setter>
+        <Setter Property="NavigationStyle" Value="Row"></Setter>
+        <Setter Property="RetainSelectionOnClickOutsideCheckBoxSelector" Value="False"></Setter>
+        <Setter Property="AllowPerPixelScrolling" Value="True"></Setter>
+    </Style>
+
+    <Style x:Key="TabeView_EditView" TargetType="dxg:TableView">
+        <Setter Property="ShowTotalSummary" Value="True"></Setter>
+        <Setter Property="EnterMoveNextColumn" Value="True"></Setter>
+        <Setter Property="AllowColumnMoving" Value="False"></Setter>
+        <Setter Property="AllowSorting" Value="False"></Setter>
+        <Setter Property="AllowColumnFiltering" Value="False"></Setter>
+        <Setter Property="ShowGroupPanel" Value="False"></Setter>
+        <Setter Property="NewItemRowPosition" Value="Bottom"></Setter>
+    </Style>
+</ResourceDictionary>
