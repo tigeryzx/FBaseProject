@@ -1,4 +1,5 @@
-﻿using Abp.Authorization;
+﻿using Abp.Application.Services.Dto;
+using Abp.Authorization;
 using Abp.Authorization.Users;
 using Abp.Configuration;
 using Abp.Configuration.Startup;
@@ -9,6 +10,8 @@ using Abp.Zero.Configuration;
 using IFoxtec.Authorization.Roles;
 using IFoxtec.Authorization.Users;
 using IFoxtec.MultiTenancy;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace IFoxtec.Authorization
 {
@@ -34,6 +37,23 @@ namespace IFoxtec.Authorization
                   iocResolver,
                   roleManager)
         {
+        }
+
+        public async Task<ListResultDto<Tenant>> GetActiveTenant()
+        {
+            var tenantList = await Task.Run(() =>
+            {
+                return base.TenantRepository
+                .GetAll()
+                .Where(x => x.IsActive)
+                .ToList();
+            });
+
+            return new ListResultDto<Tenant>()
+            {
+                Items = tenantList
+            };
+
         }
     }
 }

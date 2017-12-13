@@ -25,7 +25,7 @@ namespace IFoxtec.MultiTenancy
         {
         }
 
-        public async Task<IQueryable<Tenant>> GetActiveTenant()
+        public async Task<IQueryable<Tenant>> GetActiveTenantAsync()
         {
             return await Task.Run(() =>
             {

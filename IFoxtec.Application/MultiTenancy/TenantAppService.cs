@@ -1,8 +1,10 @@
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Abp.Application.Services;
 using Abp.Application.Services.Dto;
 using Abp.Authorization;
+using Abp.AutoMapper;
 using Abp.Domain.Repositories;
 using Abp.Extensions;
 using Abp.IdentityFramework;
@@ -110,6 +112,16 @@ namespace IFoxtec.MultiTenancy
         private void CheckErrors(IdentityResult identityResult)
         {
             identityResult.CheckErrors(LocalizationManager);
+        }
+
+        public async Task<ListResultDto<TenantDto>> GetActiveTenant()
+        {
+            var tenantList = await _tenantManager.GetActiveTenantAsync();
+            return new ListResultDto<TenantDto>()
+            {
+                Items = tenantList.MapTo<List<TenantDto>>()
+            };
+
         }
     }
 }

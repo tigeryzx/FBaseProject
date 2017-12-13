@@ -1,7 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
-using System.Web.Http;
-using Abp.Authorization;
+﻿using Abp.Authorization;
 using Abp.Authorization.Users;
 using Abp.UI;
 using Abp.Web.Models;
@@ -10,10 +7,12 @@ using IFoxtec.Api.Models;
 using IFoxtec.Authorization;
 using IFoxtec.Authorization.Users;
 using IFoxtec.MultiTenancy;
-using IFoxtec.Users;
 using Microsoft.Owin.Infrastructure;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.OAuth;
+using System;
+using System.Threading.Tasks;
+using System.Web.Http;
 
 namespace IFoxtec.Api.Controllers
 {
