@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Markup;
-using Autofac;
 
 namespace IFoxtec.Common.WPF.Extensions
 {
@@ -34,7 +33,7 @@ namespace IFoxtec.Common.WPF.Extensions
 			{
 				return null;
 			}
-            var result = TypeRegister.Container.Resolve(this.Type);
+            var result = IOCManager.Resolve(this.Type);
 
             return result;
 		}
