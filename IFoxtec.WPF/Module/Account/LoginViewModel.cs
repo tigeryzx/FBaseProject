@@ -1,15 +1,19 @@
-﻿using Abp.AutoMapper;
+﻿using Abp.Authorization;
+using Abp.AutoMapper;
 using Abp.Dependency;
 using DevExpress.Mvvm;
 using DevExpress.Mvvm.DataAnnotations;
 using DevExpress.Mvvm.POCO;
-using IFoxtec.Facade.Account;
+using IFoxtec.Authorization;
+using IFoxtec.Common.WPF.ViewModels;
+using IFoxtec.MultiTenancy;
 using IFoxtec.WPF.Module.Account.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Deployment.Application;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace IFoxtec.WPF.Module.Account
 {
@@ -17,19 +21,25 @@ namespace IFoxtec.WPF.Module.Account
     /// 登录VM
     /// </summary>
     [POCOViewModel(ImplementIDataErrorInfo = true)]
-    public class LoginViewModel : ViewModelBase
+    public class LoginViewModel : BaseViewModel
     {
         public static LoginViewModel Create()
         {
-            var account = IocManager.Instance.Resolve<IAccountContract>();
-            return ViewModelSource.Create(() => new LoginViewModel(account));
+            var tenantAppService = IocManager.Instance.Resolve<ITenantAppService>();
+            var logInManager = IocManager.Instance.Resolve<LogInManager>();
+
+            return ViewModelSource.Create(() => new LoginViewModel(tenantAppService, logInManager));
         }
 
-        private readonly IAccountContract _accountContract;
+        private readonly ITenantAppService _tenantAppService;
+        private readonly LogInManager _logInManager;
 
-        public LoginViewModel(IAccountContract accountContract)
+        public LoginViewModel(
+            ITenantAppService tenantAppService,
+            LogInManager logInManager)
         {
-            this._accountContract = accountContract;
+            this._tenantAppService = tenantAppService;
+            this._logInManager = logInManager;
 
             InitCommand();
 
@@ -195,7 +205,7 @@ namespace IFoxtec.WPF.Module.Account
 
         public DelegateCommand CloseCommand { get; set; }
 
-        public DelegateCommand LoadDataCommand { get; set; }
+        public AsyncCommand LoadDataCommand { get; set; }
 
         public Action GoToMainWin { get; set; }
 
@@ -203,22 +213,21 @@ namespace IFoxtec.WPF.Module.Account
         {
             this.LoginCommand = new DelegateCommand(Login, CanLogin);
             this.CloseCommand = new DelegateCommand(Close);
-            this.LoadDataCommand = new DelegateCommand(LoadData);
+            this.LoadDataCommand = new AsyncCommand(LoadData);
         }
-
-        private async void LoadData()
+        
+        private async Task LoadData()
         {
-
             this.IsLoading = true;
-            var tenantList = await this._accountContract.GetActiveTenant();
-
+            
+            var tenantList = await this._tenantAppService.GetActiveTenant();
             this.TenantList = tenantList.Items.MapTo<List<TenantItemModel>>();
             if (this.TenantList != null && this.TenantList.Count() > 0)
                 this.SelTenant = this.TenantList.FirstOrDefault();
 
             this.IsLoading = false;
         }
-
+        
         /// <summary>
         /// 关闭
         /// </summary>
@@ -226,7 +235,7 @@ namespace IFoxtec.WPF.Module.Account
         {
             this.CurrentWindowService.Close();
         }
-
+        
         /// <summary>
         /// 登录
         /// </summary>
@@ -236,19 +245,30 @@ namespace IFoxtec.WPF.Module.Account
                 this.MessageBoxService.ShowMessage("未设置登录回调", "提示");
             else
             {
-                var resultInfo = await this._accountContract.Login(new Facade.Account.Dto.LoginDto() {
-                    UsernameOrEmailAddress = this.UsernameOrEmailAddress,
-                    TenancyName = this.SelTenant.TenancyName,
-                    Password = this.Password
-                });
-                if (resultInfo.Success)
-                    this.GoToMainWin();
-                else
-                    this.ResultMessage = resultInfo.ErrorMessage + "：" + resultInfo.ErrorDetails;
-                this.LoginFailed = !resultInfo.Success;
+                var loginResult = await this._logInManager.LoginAsync(
+                    this.UsernameOrEmailAddress,
+                    this.Password,
+                    this.SelTenant.TenancyName);
 
+                switch (loginResult.Result)
+                {
+                    case AbpLoginResultType.Success:
+                        {
+                            // TODO: 登录信息写入记录
+                            this.GoToMainWin();
+                            break;
+                        }
+                    default:
+                        {
+                            this.ResultMessage = "登录失败";
+                            break;
+                        }
+                }
+                this.LoginFailed = loginResult.Result == AbpLoginResultType.Success;
             }
         }
+
+     
 
         /// <summary>
         /// 是否允许登录

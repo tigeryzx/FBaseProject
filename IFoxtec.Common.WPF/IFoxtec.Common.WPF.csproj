@@ -224,6 +224,7 @@
     <Compile Include="ViewModels\IBaseListViewModel.cs" />
     <Compile Include="ViewModels\IBaseViewModel.cs" />
     <Compile Include="ViewModels\PartVm\BaseEditGridViewModel.cs" />
+    <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\PartVm\ISupportValidate.cs" />
   </ItemGroup>
   <ItemGroup>

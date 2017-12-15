@@ -23,7 +23,6 @@ namespace IFoxtec.WPF
     public partial class App : Application
     {
         private readonly AbpBootstrapper _bootstrapper;
-        private MainWindow _mainWindow;
 
         public App()
         {
@@ -44,9 +43,6 @@ namespace IFoxtec.WPF
             {
                 typeof(App).Assembly,
             });
-
-            _mainWindow = _bootstrapper.IocManager.Resolve<MainWindow>();
-            _mainWindow.Show();
 
             base.OnStartup(e);
 
@@ -118,7 +114,6 @@ namespace IFoxtec.WPF
 
         protected override void OnExit(ExitEventArgs e)
         {
-            _bootstrapper.IocManager.Release(_mainWindow);
             _bootstrapper.Dispose();
 
             base.OnExit(e);
