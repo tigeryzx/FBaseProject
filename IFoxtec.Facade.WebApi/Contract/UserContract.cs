@@ -1,7 +1,7 @@
 ﻿using Abp.Application.Services.Dto;
 using IFoxtec.Facade.Contract;
-using IFoxtec.Facade.Users.Dto;
 using IFoxtec.Facade.WebApi.Contract.Common;
+using IFoxtec.Users.Dto;
 using System;
 using System.Collections.Generic;
 using System.Linq;

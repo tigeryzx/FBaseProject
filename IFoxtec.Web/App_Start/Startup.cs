@@ -27,6 +27,7 @@ namespace IFoxtec.Web
             app.UseExternalSignInCookie(DefaultAuthenticationTypes.ExternalCookie);
 
             app.MapSignalR();
+
         }
     }
 }

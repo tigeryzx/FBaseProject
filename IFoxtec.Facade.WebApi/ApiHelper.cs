@@ -1,4 +1,6 @@
-﻿using Abp.Web.Models;
+﻿using Abp.Dependency;
+using Abp.Web.Models;
+using IFoxtec.Common.WPF.Config;
 using Newtonsoft.Json;
 using RestSharp;
 using System;
@@ -66,6 +68,11 @@ namespace IFoxtec.Facade.WebApi
             Post<object>(path, param);
         }
 
+        public TResult Post<TResult>(string path)
+        {
+            return Post<TResult>(path, null);
+        }
+
         public TResult Post<TResult>(string path, object param)
         {
             var responseObj = RealPost<AjaxResponse<TResult>>(path, param);
@@ -89,14 +96,17 @@ namespace IFoxtec.Facade.WebApi
             return JsonConvert.DeserializeObject<TResult>(response.Content);
         }
 
-        public AjaxResponseBase SrcPost(string path,object param)
+        public AjaxResponse<TResult> SrcPost<TResult>(string path,object param)
         {
-            return Post<AjaxResponse>(path, param);
+            return Post<AjaxResponse<TResult>>(path, param);
         }
 
         protected virtual void SetAuthInfo(RestClient client, RestRequest request)
         {
-
+            var configManager = IocManager.Instance.Resolve<IConfigManager>();
+            var token = configManager.Get<string>(ConfigIndex.Token);
+            if (string.IsNullOrEmpty(token))
+                request.AddHeader("Authorization", "Bearer " + token);
         }
 
         private RestClient GetClient(string path)

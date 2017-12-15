@@ -48,7 +48,7 @@
                     <dx:LoadingDecorator IsSplashScreenShown="{Binding Path=IsLoading}">
                         <StackPanel Background="White" Opacity="0.9">
                             <TextBlock Visibility="{Binding Path=LoginFailed,Converter={dx:BooleanToVisibilityConverter}}" Foreground="Red" Padding="5,2,2,5" Text="{Binding Path=ResultMessage}"></TextBlock>
-                            <dxes:TextEdit ShowNullText="True" Text="{Binding Path=UserName,UpdateSourceTrigger=PropertyChanged,ValidatesOnDataErrors=True}" Style="{StaticResource baseLogin}" NullText="请输入登录账号">
+                            <dxes:TextEdit ShowNullText="True" Text="{Binding Path=UsernameOrEmailAddress,UpdateSourceTrigger=PropertyChanged,ValidatesOnDataErrors=True}" Style="{StaticResource baseLogin}" NullText="请输入账号或邮箱">
                                 <dxmvvm:Interaction.Behaviors>
                                     <dxmvvm:FocusBehavior />
                                 </dxmvvm:Interaction.Behaviors>

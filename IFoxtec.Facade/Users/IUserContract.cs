@@ -1,5 +1,5 @@
 ﻿using Abp.Application.Services.Dto;
-using IFoxtec.Facade.Users.Dto;
+using IFoxtec.Users.Dto;
 using System;
 using System.Collections.Generic;
 using System.Linq;
