@@ -54,7 +54,7 @@
                                 </dxmvvm:Interaction.Behaviors>
                             </dxes:TextEdit>
                             <dxes:PasswordBoxEdit Text="{Binding Path=Password,UpdateSourceTrigger=PropertyChanged,ValidatesOnDataErrors=True}" ShowNullText="True" Style="{StaticResource baseLogin}" NullText="请输入密码" />
-                            <dxes:ComboBoxEdit IsTextEditable="False" SelectedItem="{Binding Path=SelTenant}" ItemsSource="{Binding Path=TenantList}" ValueMember="Value" DisplayMember="Name" ShowNullText="True" Style="{StaticResource baseLogin}" NullText="请选择租户" />
+                            <dxes:ComboBoxEdit IsTextEditable="False" SelectedItem="{Binding Path=SelTenant}" ItemsSource="{Binding Path=TenantList}" ValueMember="TenancyName" DisplayMember="Name" ShowNullText="True" Style="{StaticResource baseLogin}" NullText="请选择租户" />
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*" />

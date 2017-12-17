@@ -201,7 +201,7 @@ namespace IFoxtec.WPF.Module.Account
         /// <summary>
         /// 登录命令
         /// </summary>
-        public DelegateCommand LoginCommand { get; set; }
+        public AsyncCommand LoginCommand { get; set; }
 
         public DelegateCommand CloseCommand { get; set; }
 
@@ -211,21 +211,26 @@ namespace IFoxtec.WPF.Module.Account
 
         private void InitCommand()
         {
-            this.LoginCommand = new DelegateCommand(Login, CanLogin);
+            this.LoginCommand = new AsyncCommand(Login, CanLogin);
             this.CloseCommand = new DelegateCommand(Close);
             this.LoadDataCommand = new AsyncCommand(LoadData);
         }
         
-        private async Task LoadData()
+        private Task LoadData()
         {
-            this.IsLoading = true;
-            
-            var tenantList = await this._tenantAppService.GetActiveTenant();
-            this.TenantList = tenantList.Items.MapTo<List<TenantItemModel>>();
-            if (this.TenantList != null && this.TenantList.Count() > 0)
-                this.SelTenant = this.TenantList.FirstOrDefault();
+            return Task.Factory.StartNew(() =>
+            {
+                this.IsLoading = true;
 
-            this.IsLoading = false;
+                var tenantList = this._tenantAppService.GetActiveTenant().Result;
+                this.TenantList = tenantList.Items.MapTo<List<TenantItemModel>>();
+                if (this.TenantList != null && this.TenantList.Count() > 0)
+                    this.SelTenant = this.TenantList.FirstOrDefault();
+
+                this.IsLoading = false;
+
+            });
+
         }
         
         /// <summary>
@@ -239,17 +244,29 @@ namespace IFoxtec.WPF.Module.Account
         /// <summary>
         /// 登录
         /// </summary>
-        protected async void Login()
+        protected Task Login()
         {
-            if (this.GoToMainWin == null)
-                this.MessageBoxService.ShowMessage("未设置登录回调", "提示");
-            else
-            {
-                var loginResult = await this._logInManager.LoginAsync(
-                    this.UsernameOrEmailAddress,
-                    this.Password,
-                    this.SelTenant.TenancyName);
+            return Task.Factory.StartNew(()=> {
 
+                this.IsLoading = true;
+                this.LoginFailed = false;
+
+                if (this.GoToMainWin == null)
+                    this.MessageBoxService.ShowMessage("未设置登录回调", "提示");
+                else
+                {
+                    return this._logInManager.LoginAsync(
+                        this.UsernameOrEmailAddress,
+                        this.Password,
+                        this.SelTenant.TenancyName).Result;
+                }
+
+                return null;
+
+            }).ContinueWith(x=> {
+                this.IsLoading = false;
+
+                var loginResult = x.Result;
                 switch (loginResult.Result)
                 {
                     case AbpLoginResultType.Success:
@@ -260,12 +277,12 @@ namespace IFoxtec.WPF.Module.Account
                         }
                     default:
                         {
-                            this.ResultMessage = "登录失败";
+                            this.ResultMessage = "登录失败:" + loginResult.Result.ToString();
                             break;
                         }
                 }
-                this.LoginFailed = loginResult.Result == AbpLoginResultType.Success;
-            }
+                this.LoginFailed = loginResult.Result != AbpLoginResultType.Success;
+            }, TaskScheduler.FromCurrentSynchronizationContext());
         }
 
      
