@@ -10,7 +10,7 @@ namespace IFoxtec.Common.WPF.Config
     /// <summary>
     /// 内存配置管理器
     /// </summary>
-    public class MemoryConfigManager : IConfigManager, ISingletonDependency
+    public class MemoryConfigManager : IConfigManager
     {
         private Dictionary<string, object> _Dictionary = new Dictionary<string, object>();
 

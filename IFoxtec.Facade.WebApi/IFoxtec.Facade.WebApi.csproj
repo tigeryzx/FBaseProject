@@ -158,7 +158,7 @@
     <Compile Include="Contract\Common\BaseContract.cs" />
     <Compile Include="Contract\Common\BaseCrudContract.cs" />
     <Compile Include="Contract\UserContract.cs" />
-    <Compile Include="IFoxtecFacadeWebApiModule.cs" />
+    <Compile Include="WebApiFacadeInstaller.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -4,6 +4,7 @@ using DevExpress.Mvvm;
 using DevExpress.Mvvm.DataAnnotations;
 using DevExpress.Mvvm.POCO;
 using IFoxtec.Facade.Account;
+using IFoxtec.WPF.Common.IOC;
 using IFoxtec.WPF.Module.Account.Models;
 using System;
 using System.Collections.Generic;
@@ -21,7 +22,7 @@ namespace IFoxtec.WPF.Module.Account
     {
         public static LoginViewModel Create()
         {
-            var account = IocManager.Instance.Resolve<IAccountContract>();
+            var account = BaseIocManager.Instance.Resolve<IAccountContract>();
             return ViewModelSource.Create(() => new LoginViewModel(account));
         }
 

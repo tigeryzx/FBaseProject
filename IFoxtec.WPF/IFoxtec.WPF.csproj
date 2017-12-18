@@ -230,10 +230,10 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Common\IOC\BaseIocManager.cs" />
     <Compile Include="DXSplashScreen\MainSplashScreenView.xaml.cs">
       <DependentUpon>MainSplashScreenView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="IFoxtecWPFModule.cs" />
     <Compile Include="LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
     </Compile>

@@ -22,31 +22,20 @@ namespace IFoxtec.WPF
     /// </summary>
     public partial class App : Application
     {
-        private readonly AbpBootstrapper _bootstrapper;
-        private MainWindow _mainWindow;
-
         public App()
         {
             this.Startup += App_Startup;
             Current.DispatcherUnhandledException += Current_DispatcherUnhandledException;
             AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
-
-            _bootstrapper = AbpBootstrapper.Create<IFoxtecWPFModule>();
-            _bootstrapper.IocManager.IocContainer.AddFacility<LoggingFacility>(f => f.UseAbpLog4Net().WithConfig("log4net.config"));
         }
 
         protected override void OnStartup(StartupEventArgs e)
         {
-            _bootstrapper.Initialize();
-
             // 注册View供DocumentService使用
             ViewLocator.Default = new BaseViewLocator(new List<Assembly>()
             {
                 typeof(App).Assembly,
             });
-
-            _mainWindow = _bootstrapper.IocManager.Resolve<MainWindow>();
-            _mainWindow.Show();
 
             base.OnStartup(e);
 
@@ -114,14 +103,6 @@ namespace IFoxtec.WPF
         private void OnAppStartup_UpdateThemeName(object sender, StartupEventArgs e)
         {
             DevExpress.Xpf.Core.ApplicationThemeHelper.UpdateApplicationThemeName();
-        }
-
-        protected override void OnExit(ExitEventArgs e)
-        {
-            _bootstrapper.IocManager.Release(_mainWindow);
-            _bootstrapper.Dispose();
-
-            base.OnExit(e);
         }
     }
 }

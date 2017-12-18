@@ -153,7 +153,6 @@
     <Compile Include="ConfigIndex.cs" />
     <Compile Include="Contract\IContract.cs" />
     <Compile Include="Contract\ICrudContract.cs" />
-    <Compile Include="IFoxtecFacadeModule.cs" />
     <Compile Include="Users\IUserContract.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
