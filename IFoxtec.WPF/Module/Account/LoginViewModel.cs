@@ -1,10 +1,13 @@
 ﻿using Abp.Authorization;
 using Abp.AutoMapper;
 using Abp.Dependency;
+using Abp.Runtime.Security;
+using Abp.UI;
 using DevExpress.Mvvm;
 using DevExpress.Mvvm.DataAnnotations;
 using DevExpress.Mvvm.POCO;
 using IFoxtec.Authorization;
+using IFoxtec.Common.WPF.Config;
 using IFoxtec.Common.WPF.ViewModels;
 using IFoxtec.MultiTenancy;
 using IFoxtec.WPF.Module.Account.Models;
@@ -12,7 +15,11 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Deployment.Application;
+using System.Globalization;
 using System.Linq;
+using System.Security.Claims;
+using System.Security.Principal;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace IFoxtec.WPF.Module.Account
@@ -27,19 +34,23 @@ namespace IFoxtec.WPF.Module.Account
         {
             var tenantAppService = IocManager.Instance.Resolve<ITenantAppService>();
             var logInManager = IocManager.Instance.Resolve<LogInManager>();
+            var configManager = IocManager.Instance.Resolve<IConfigManager>();
 
-            return ViewModelSource.Create(() => new LoginViewModel(tenantAppService, logInManager));
+            return ViewModelSource.Create(() => new LoginViewModel(tenantAppService, logInManager, configManager));
         }
 
         private readonly ITenantAppService _tenantAppService;
         private readonly LogInManager _logInManager;
+        private readonly IConfigManager _configManager;
 
         public LoginViewModel(
             ITenantAppService tenantAppService,
-            LogInManager logInManager)
+            LogInManager logInManager,
+            IConfigManager configManager)
         {
             this._tenantAppService = tenantAppService;
             this._logInManager = logInManager;
+            this._configManager = configManager;
 
             InitCommand();
 
@@ -271,21 +282,53 @@ namespace IFoxtec.WPF.Module.Account
                 {
                     case AbpLoginResultType.Success:
                         {
-                            // TODO: 登录信息写入记录
+                            var user = loginResult.User;
+
+                            ClaimsIdentity identity = new ClaimsIdentity();
+                            identity.AddClaim(new Claim(AbpClaimTypes.UserId, user.Id.ToString(CultureInfo.InvariantCulture)));
+                            identity.AddClaim(new Claim(AbpClaimTypes.UserName, user.UserName));
+                            identity.AddClaim(new Claim(AbpClaimTypes.TenantId, user.TenantId.Value.ToString(CultureInfo.InvariantCulture)));
+
+                            ClaimsPrincipal principal = new ClaimsPrincipal(identity);
+                            Thread.CurrentPrincipal = principal;
+
                             this.GoToMainWin();
                             break;
                         }
                     default:
                         {
-                            this.ResultMessage = "登录失败:" + loginResult.Result.ToString();
-                            break;
+                            throw CreateExceptionForFailedLoginAttempt(loginResult.Result, this.UsernameOrEmailAddress, this.SelTenant.TenancyName);
                         }
                 }
                 this.LoginFailed = loginResult.Result != AbpLoginResultType.Success;
             }, TaskScheduler.FromCurrentSynchronizationContext());
         }
 
-     
+        private Exception CreateExceptionForFailedLoginAttempt(AbpLoginResultType result, string usernameOrEmailAddress, string tenancyName)
+        {
+            switch (result)
+            {
+                case AbpLoginResultType.Success:
+                    return new ApplicationException("Don't call this method with a success result!");
+                case AbpLoginResultType.InvalidUserNameOrEmailAddress:
+                case AbpLoginResultType.InvalidPassword:
+                    return new UserFriendlyException(L("LoginFailed"), L("InvalidUserNameOrPassword"));
+                case AbpLoginResultType.InvalidTenancyName:
+                    return new UserFriendlyException(L("LoginFailed"), L("ThereIsNoTenantDefinedWithName{0}", tenancyName));
+                case AbpLoginResultType.TenantIsNotActive:
+                    return new UserFriendlyException(L("LoginFailed"), L("TenantIsNotActive", tenancyName));
+                case AbpLoginResultType.UserIsNotActive:
+                    return new UserFriendlyException(L("LoginFailed"), L("UserIsNotActiveAndCanNotLogin", usernameOrEmailAddress));
+                case AbpLoginResultType.UserEmailIsNotConfirmed:
+                    return new UserFriendlyException(L("LoginFailed"), "UserEmailIsNotConfirmedAndCanNotLogin");
+                case AbpLoginResultType.LockedOut:
+                    return new UserFriendlyException(L("LoginFailed"), L("UserLockedOutMessage"));
+                default: //Can not fall to default actually. But other result types can be added in the future and we may forget to handle it
+                    //Logger.Warn("Unhandled login fail reason: " + result);
+                    return new UserFriendlyException(L("LoginFailed"));
+            }
+        }
+
 
         /// <summary>
         /// 是否允许登录

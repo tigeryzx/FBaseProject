@@ -14,6 +14,7 @@ using IFoxtec.Common.WPF.ViewLocator;
 using Abp;
 using Castle.Facilities.Logging;
 using Abp.Castle.Logging.Log4Net;
+using Abp.UI;
 
 namespace IFoxtec.WPF
 {
@@ -61,6 +62,9 @@ namespace IFoxtec.WPF
                 if (exception != null)
                 {
                     // LogHelper.Instance.Logger.Error(exception, "非UI线程全局异常");
+                    var userFriendlyException = exception as UserFriendlyException;
+                    if (userFriendlyException != null)
+                        DXMessageBox.Show(userFriendlyException.Details, userFriendlyException.Message, MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
             catch (Exception ex)
@@ -79,7 +83,14 @@ namespace IFoxtec.WPF
         {
             try
             {
-                // LogHelper.Instance.Logger.Error(e.Exception, "UI线程全局异常");
+                var exception = e.Exception as Exception;
+                if (exception != null)
+                {
+                    // LogHelper.Instance.Logger.Error(e.Exception, "UI线程全局异常");
+                    var userFriendlyException = exception as UserFriendlyException;
+                    if (userFriendlyException != null)
+                        DXMessageBox.Show(userFriendlyException.Details, userFriendlyException.Message, MessageBoxButton.OK, MessageBoxImage.Error);
+                }
                 e.Handled = true;
             }
             catch (Exception ex)

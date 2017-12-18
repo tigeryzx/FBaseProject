@@ -3,6 +3,9 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
         xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
+        xmlns:vm="clr-namespace:IFoxtec.WPF.Module.Home"
+        xmlns:foxmvvm="http://www.ifoxtec.com/wpf/core"
+        DataContext="{foxmvvm:MyViewModelSource Type={x:Type vm:BaseContextViewModel}}"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
     </Grid>

@@ -290,6 +290,10 @@
   <ItemGroup>
     <Compile Include="Module\Account\LoginViewModel.cs" />
     <Compile Include="Module\Account\Models\TenantItemModel.cs" />
+    <Compile Include="Module\Home\BaseContextViewModel.cs" />
+    <Compile Include="Module\Home\BaseHomeViewModel.cs" />
+    <Compile Include="Module\Home\LockViewModel.cs" />
+    <Compile Include="Module\ViewIndex.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
