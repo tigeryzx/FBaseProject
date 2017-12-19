@@ -114,6 +114,7 @@ namespace IFoxtec.MultiTenancy
             identityResult.CheckErrors(LocalizationManager);
         }
 
+        [AbpAllowAnonymous]
         public async Task<ListResultDto<TenantDto>> GetActiveTenant()
         {
             var tenantList = await _tenantManager.GetActiveTenantAsync();

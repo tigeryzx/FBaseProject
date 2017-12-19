@@ -3,14 +3,14 @@ using Abp.Dependency;
 using DevExpress.Mvvm;
 using DevExpress.Mvvm.DataAnnotations;
 using DevExpress.Mvvm.POCO;
-using IFoxtec.Facade.Account;
 using IFoxtec.WPF.Common.IOC;
-using IFoxtec.WPF.Module.Account.Models;
+using IFoxtec.WPF.Common.UIThread;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Deployment.Application;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace IFoxtec.WPF.Module.Account
 {
@@ -207,17 +207,19 @@ namespace IFoxtec.WPF.Module.Account
             this.LoadDataCommand = new DelegateCommand(LoadData);
         }
 
-        private async void LoadData()
+        private void LoadData()
         {
-
-            this.IsLoading = true;
-            var tenantList = await this._accountContract.GetActiveTenant();
-
-            this.TenantList = tenantList.Items.MapTo<List<TenantItemModel>>();
-            if (this.TenantList != null && this.TenantList.Count() > 0)
-                this.SelTenant = this.TenantList.FirstOrDefault();
-
-            this.IsLoading = false;
+            ThreadHelper.StartTaskAndCallbackUI(() =>
+            {
+                this.IsLoading = true;
+                return this._accountContract.GetActiveTenant().Result;
+            }, (x) => {
+                var tenantList = x.Result;
+                this.TenantList = tenantList.Items.MapTo<List<TenantItemModel>>();
+                if (this.TenantList != null && this.TenantList.Count() > 0)
+                    this.SelTenant = this.TenantList.FirstOrDefault();
+                this.IsLoading = false;
+            });
         }
 
         /// <summary>
@@ -231,23 +233,37 @@ namespace IFoxtec.WPF.Module.Account
         /// <summary>
         /// 登录
         /// </summary>
-        protected async void Login()
+        protected void Login()
         {
             if (this.GoToMainWin == null)
+            {
                 this.MessageBoxService.ShowMessage("未设置登录回调", "提示");
+            }
             else
             {
-                var resultInfo = await this._accountContract.Login(new Facade.Account.Dto.LoginDto() {
-                    UsernameOrEmailAddress = this.UsernameOrEmailAddress,
-                    TenancyName = this.SelTenant.TenancyName,
-                    Password = this.Password
-                });
-                if (resultInfo.Success)
-                    this.GoToMainWin();
-                else
-                    this.ResultMessage = resultInfo.ErrorMessage + "：" + resultInfo.ErrorDetails;
-                this.LoginFailed = !resultInfo.Success;
+                ThreadHelper.StartTaskAndCallbackUI(() => 
+                {
+                    this.IsLoading = true;
+                    this.ResultMessage = string.Empty;
 
+                    return this._accountContract.Login(new LoginDto()
+                    {
+                        UsernameOrEmailAddress = this.UsernameOrEmailAddress,
+                        TenancyName = this.SelTenant.TenancyName,
+                        Password = this.Password
+                    }).Result;
+                },
+                (x) => {
+
+                    this.IsLoading = false;
+
+                    var resultInfo = x.Result;
+                    if (resultInfo.Success)
+                        this.GoToMainWin();
+                    else
+                        this.ResultMessage = resultInfo.ErrorMessage + "：" + resultInfo.ErrorDetails;
+                    this.LoginFailed = !resultInfo.Success;
+                });
             }
         }
 

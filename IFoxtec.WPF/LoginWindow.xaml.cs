@@ -42,5 +42,10 @@ namespace IFoxtec.WPF
             Application.Current.MainWindow = dr;
             this.Close();
         }
+
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            this.DragMove();
+        }
     }
 }

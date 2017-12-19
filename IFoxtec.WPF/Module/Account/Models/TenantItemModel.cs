@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace IFoxtec.WPF.Module.Account.Models
+namespace IFoxtec.WPF.Module.Account
 {
     [AutoMapFrom(typeof(TenantDto))]
     public class TenantItemModel

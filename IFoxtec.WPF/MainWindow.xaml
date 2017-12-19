@@ -1,9 +1,19 @@
-﻿<dx:DXWindow x:Class="IFoxtec.WPF.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
-        xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
-        Title="MainWindow" Height="350" Width="525">
+﻿<dxr:DXRibbonWindow x:Class="IFoxtec.WPF.MainWindow" 
+                    WindowStartupLocation="CenterScreen" 
+                    Title="MainWindow" 
+                    Height="600" 
+                    Width="800"
+                    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+                    xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
+                    xmlns:dxr="http://schemas.devexpress.com/winfx/2008/xaml/ribbon"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:IFoxtec.WPF"
+                    xmlns:home="clr-namespace:IFoxtec.WPF.Module.Home">
+    <dxmvvm:Interaction.Behaviors>
+        <dx:DXSplashScreenService State="加载中请稍候......" SplashScreenType="{x:Type local:MainSplashScreenView}" ShowSplashScreenOnLoading="True" />
+    </dxmvvm:Interaction.Behaviors>
     <Grid>
+        <home:BaseContextView />
     </Grid>
-</dx:DXWindow>
+</dxr:DXRibbonWindow>

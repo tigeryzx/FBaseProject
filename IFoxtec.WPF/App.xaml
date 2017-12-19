@@ -5,8 +5,8 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="/Theme/BarButton.Style.xaml"></ResourceDictionary>
-                <ResourceDictionary Source="/Theme/GridControl.Style.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="/Themes/BarButton.Style.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="/Themes/GridControl.Style.xaml"></ResourceDictionary>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

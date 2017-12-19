@@ -10,10 +10,11 @@ using System.Threading;
 using DevExpress.Mvvm.ModuleInjection;
 using DevExpress.Mvvm.UI;
 using System.Reflection;
-using IFoxtec.Common.WPF.ViewLocator;
 using Abp;
 using Castle.Facilities.Logging;
 using Abp.Castle.Logging.Log4Net;
+using IFoxtec.WPF.Common.ViewLocator;
+using IFoxtec.WPF.Module;
 
 namespace IFoxtec.WPF
 {
@@ -27,6 +28,8 @@ namespace IFoxtec.WPF
             this.Startup += App_Startup;
             Current.DispatcherUnhandledException += Current_DispatcherUnhandledException;
             AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
+
+            MappingConfig.Register();
         }
 
         protected override void OnStartup(StartupEventArgs e)

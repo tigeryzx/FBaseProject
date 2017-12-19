@@ -47,6 +47,9 @@
     <Reference Include="Abp.Castle.Log4Net, Version=3.2.4.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Abp.Castle.Log4Net.3.2.4\lib\netstandard2.0\Abp.Castle.Log4Net.dll</HintPath>
     </Reference>
+    <Reference Include="Abp.Web.Common, Version=3.2.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.Web.Common.3.2.4\lib\netstandard2.0\Abp.Web.Common.dll</HintPath>
+    </Reference>
     <Reference Include="AutoMapper, Version=6.2.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
       <HintPath>..\packages\AutoMapper.6.2.1\lib\net45\AutoMapper.dll</HintPath>
     </Reference>
@@ -146,6 +149,9 @@
     <Reference Include="Nito.Disposables, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Nito.Disposables.1.0.0\lib\portable45-net45+win8+wp8+wpa81\Nito.Disposables.dll</HintPath>
     </Reference>
+    <Reference Include="RestSharp, Version=106.1.0.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.106.1.0\lib\net452\RestSharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Collections.Immutable, Version=1.2.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Collections.Immutable.1.4.0\lib\netstandard2.0\System.Collections.Immutable.dll</HintPath>
@@ -230,7 +236,46 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Common\BaseModel\BaseEntity.cs" />
+    <Compile Include="Common\BaseModel\CreateDocParam.cs" />
+    <Compile Include="Common\BaseModel\DocDescription.cs" />
+    <Compile Include="Common\BaseModel\DocFormParam.cs" />
+    <Compile Include="Common\BaseModel\MenuDescription.cs" />
+    <Compile Include="Common\BaseModel\ModuleDescription.cs" />
+    <Compile Include="Common\Behaviors\GridRowNumberBehavior.cs" />
+    <Compile Include="Common\Config\IConfigManager.cs" />
+    <Compile Include="Common\Config\MemoryConfigManager.cs" />
+    <Compile Include="Common\Contract\BaseContract.cs" />
+    <Compile Include="Common\Contract\BaseCrudContract.cs" />
+    <Compile Include="Common\Contract\IContract.cs" />
+    <Compile Include="Common\Contract\ICrudContract.cs" />
+    <Compile Include="Common\Controls\Layout\BaseDockLayout.cs" />
+    <Compile Include="Common\Controls\Layout\BaseLayout.cs" />
+    <Compile Include="Common\Converter\NegateConverter.cs" />
+    <Compile Include="Common\Extensions\MyViewModelSourceExtension.cs" />
+    <Compile Include="Common\FControls\BaseControl.cs" />
+    <Compile Include="Common\FControls\BaseEditGridControl.cs" />
+    <Compile Include="Common\Helper\EmptyToNullStringResolver.cs" />
+    <Compile Include="Common\Helper\EmptyToNullStringValueProvider.cs" />
+    <Compile Include="Common\Helper\SerializeHelper.cs" />
     <Compile Include="Common\IOC\BaseIocManager.cs" />
+    <Compile Include="Common\Messager\ReloadMessage.cs" />
+    <Compile Include="Common\Services\GridDataThreadSafeService.cs" />
+    <Compile Include="Common\Services\IGridDataThreadSafeService.cs" />
+    <Compile Include="Common\Services\IMyGridReportManagerService.cs" />
+    <Compile Include="Common\Services\MyGridReportManagerService.cs" />
+    <Compile Include="Common\UIThread\ThreadHelper.cs" />
+    <Compile Include="Common\ViewLocator\BaseViewLocator.cs" />
+    <Compile Include="Common\ViewModels\BaseDocumentViewModel.cs" />
+    <Compile Include="Common\ViewModels\BaseFormViewModel.cs" />
+    <Compile Include="Common\ViewModels\BaseGridFormViewModel.cs" />
+    <Compile Include="Module\Home\BaseHomeViewModel.cs" />
+    <Compile Include="Common\ViewModels\BaseListViewModel.cs" />
+    <Compile Include="Common\ViewModels\IBaseListViewModel.cs" />
+    <Compile Include="Common\ViewModels\IBaseViewModel.cs" />
+    <Compile Include="Common\ViewModels\PartVm\BaseEditGridViewModel.cs" />
+    <Compile Include="Common\ViewModels\PartVm\ISupportValidate.cs" />
+    <Compile Include="Common\WebAPI\ApiHelper.cs" />
     <Compile Include="DXSplashScreen\MainSplashScreenView.xaml.cs">
       <DependentUpon>MainSplashScreenView.xaml</DependentUpon>
     </Compile>
@@ -241,18 +286,50 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Theme\BarButton.Style.xaml">
+    <Page Include="Module\Home\BaseContextView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Theme\GridControl.Style.xaml">
+    <Page Include="Module\Home\LockView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\BarButton.Style.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\GridControl.Style.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Module\Account\Contract\AccountContract.cs" />
+    <Compile Include="Module\Account\Contract\Dto\LoginDto.cs" />
+    <Compile Include="Module\Account\Contract\Dto\LoginResultDto.cs" />
+    <Compile Include="Module\Account\Contract\IAccountContract.cs" />
     <Compile Include="Module\Account\LoginViewModel.cs" />
     <Compile Include="Module\Account\Models\TenantItemModel.cs" />
+    <Compile Include="Module\ConfigIndex.cs" />
+    <Compile Include="Module\Home\BaseContextView.xaml.cs">
+      <DependentUpon>BaseContextView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Module\Home\BaseContextViewModel.cs" />
+    <Compile Include="Module\Home\LockView.xaml.cs">
+      <DependentUpon>LockView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Module\Home\LockViewModel.cs" />
+    <Compile Include="Module\MappingConfig.cs" />
+    <Compile Include="Module\PageViewIndex.cs" />
+    <Compile Include="Module\Users\Contract\Dto\CreateUserDto.cs" />
+    <Compile Include="Module\Users\Contract\Dto\UpdateUserDto.cs" />
+    <Compile Include="Module\Users\Contract\Dto\UserDto.cs" />
+    <Compile Include="Module\Users\Contract\IUserContract.cs" />
+    <Compile Include="Module\Users\Contract\UserContract.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -292,18 +369,6 @@
     <ProjectReference Include="..\IFoxtec.Application\IFoxtec.Application.csproj">
       <Project>{edf5d964-4c0f-4f19-b674-58a38a5e5401}</Project>
       <Name>IFoxtec.Application</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\IFoxtec.Common.WPF\IFoxtec.Common.WPF.csproj">
-      <Project>{ffb376cc-01ae-4488-8e19-fd3e8840aa58}</Project>
-      <Name>IFoxtec.Common.WPF</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\IFoxtec.Facade.WebApi\IFoxtec.Facade.WebApi.csproj">
-      <Project>{27da04f9-5523-48ee-86fd-8837d7a0c92e}</Project>
-      <Name>IFoxtec.Facade.WebApi</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\IFoxtec.Facade\IFoxtec.Facade.csproj">
-      <Project>{775888e9-5e3b-4a87-b0d6-7b4e99daecf9}</Project>
-      <Name>IFoxtec.Facade</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

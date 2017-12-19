@@ -18,7 +18,7 @@ namespace IFoxtec.WPF
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : DXWindow
+    public partial class MainWindow : DevExpress.Xpf.Ribbon.DXRibbonWindow
     {
         public MainWindow()
         {

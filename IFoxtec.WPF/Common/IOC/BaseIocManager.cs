@@ -1,7 +1,8 @@
 ﻿using Castle.MicroKernel.Registration;
 using Castle.Windsor;
-using IFoxtec.Common.WPF.Config;
 using IFoxtec.Facade.WebApi;
+using IFoxtec.WPF.Common.Config;
+using IFoxtec.WPF.Common.Contract;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,7 +20,12 @@ namespace IFoxtec.WPF.Common.IOC
         protected BaseIocManager()
         {
             this._container = new WindsorContainer();
-            this._container.Install(new WebApiFacadeInstaller());
+
+            // 注册契约
+            this._container.Register(Classes.FromThisAssembly()
+                .BasedOn<BaseContract>()
+                .WithServiceDefaultInterfaces()
+                .LifestyleTransient());
 
             // 注册配置管理器
             this._container.Register(Classes.From(typeof(MemoryConfigManager))
