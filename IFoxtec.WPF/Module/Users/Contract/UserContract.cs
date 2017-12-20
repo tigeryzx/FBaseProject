@@ -1,4 +1,5 @@
 ﻿using Abp.Application.Services.Dto;
+using IFoxtec.Roles.Dto;
 using IFoxtec.Users.Dto;
 using IFoxtec.WPF.Common.Contract;
 using System;
@@ -15,6 +16,14 @@ namespace IFoxtec.WPF.Module.Users
             base("http://localhost:6634/api/services/app/user")
         {
 
+        }
+
+        public Task<ListResultDto<RoleDto>> GetRoles()
+        {
+            return Task.Run(() =>
+            {
+                return this._api.Post<ListResultDto<RoleDto>>("GetRoles");
+            });
         }
     }
 }

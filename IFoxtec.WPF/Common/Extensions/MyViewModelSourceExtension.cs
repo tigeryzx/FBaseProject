@@ -1,6 +1,7 @@
 ﻿using Abp.Dependency;
 using DevExpress.Mvvm.Native;
 using DevExpress.Mvvm.UI;
+using IFoxtec.WPF.Common.IOC;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,7 +34,7 @@ namespace IFoxtec.WPF.Common.Extensions
 			{
 				return null;
 			}
-            var result = IocManager.Instance.Resolve(this.Type);
+            var result = BaseIocManager.Instance.Resolve(this.Type);
             return result;
 		}
     }

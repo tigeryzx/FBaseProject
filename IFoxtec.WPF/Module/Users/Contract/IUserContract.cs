@@ -1,4 +1,5 @@
 ﻿using Abp.Application.Services.Dto;
+using IFoxtec.Roles.Dto;
 using IFoxtec.Users.Dto;
 using IFoxtec.WPF.Common.Contract;
 using System;
@@ -11,6 +12,6 @@ namespace IFoxtec.WPF.Module.Users
 {
     public interface IUserContract : ICrudContract<UserDto, long, PagedResultRequestDto, CreateUserDto, UpdateUserDto>
     {
-
+        Task<ListResultDto<RoleDto>> GetRoles();
     }
 }

@@ -6,6 +6,7 @@ using DevExpress.Utils.Design;
 using DevExpress.Xpf.Core;
 using IFoxtec.Common.WPF.BaseModel;
 using IFoxtec.WPF.Common.BaseModel;
+using IFoxtec.WPF.Common.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,7 +19,7 @@ namespace IFoxtec.WPF.Module.Home
     /// <summary>
     /// 基础主页VM
     /// </summary>
-    public class BaseHomeViewModel : ViewModelBase
+    public class BaseHomeViewModel : BaseViewModel
     {
         public BaseHomeViewModel()
         {

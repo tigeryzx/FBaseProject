@@ -1,0 +1,74 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
+    xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+    xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol"
+    xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
+    xmlns:dxr="http://schemas.devexpress.com/winfx/2008/xaml/ribbon"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:fox_layout="clr-namespace:IFoxtec.WPF.Common.Controls.Layout"
+    xmlns:fox_ext="clr-namespace:IFoxtec.WPF.Common.Extensions"
+    xmlns:ViewModels="clr-namespace:IFoxtec.WPF.Module.Users"
+    x:Class="IFoxtec.WPF.Module.Users.CreateUserView"
+    mc:Ignorable="d"
+    DataContext="{fox_ext:MyViewModelSource Type=ViewModels:CreateUserViewModel}"
+    d:DesignHeight="400" d:DesignWidth="500">
+    <Grid>
+        <fox_layout:BaseDockLayout IsLoading="{Binding IsLoading}">
+
+            <fox_layout:BaseDockLayout.TopContent>
+                <dxr:RibbonControl Style="{StaticResource Ribbon_Default}" >
+                    <dxr:RibbonDefaultPageCategory Caption="主页">
+                        <dxr:RibbonPage Caption="主页(H)" KeyTip="H">
+                            <dxr:RibbonPageGroup Caption="用户管理">
+                                <dxb:BarButtonItem Command="{Binding SaveCommand}" Style="{StaticResource BarButton_Save}"/>
+                                <dxb:BarButtonItem Command="{Binding SaveAndCloseCommand}" Style="{StaticResource BarButton_SaveAndClose}" />
+                                <dxb:BarButtonItem Command="{Binding SaveAndCreateCommand}" Style="{StaticResource BarButton_SaveAndCreate}"/>
+                                <dxb:BarButtonItem Command="{Binding ResetCommand}" Style="{StaticResource BarButton_Reset}"/>
+                                <dxb:BarButtonItem Style="{StaticResource BarButton_Delete}">
+                                    <dxmvvm:Interaction.Behaviors>
+                                        <dxmvvm:ConfirmationBehavior MessageText="是否确认操作?" MessageTitle="提示" Command="{Binding DeleteCommand}" MessageIcon="Question" MessageDefaultResult="No"/>
+                                    </dxmvvm:Interaction.Behaviors>
+                                </dxb:BarButtonItem>
+                                <dxb:BarButtonItem Command="{Binding CloseCommand}" Style="{StaticResource BarButton_Close}"/>
+                            </dxr:RibbonPageGroup>
+                        </dxr:RibbonPage>
+                    </dxr:RibbonDefaultPageCategory>
+                </dxr:RibbonControl>
+            </fox_layout:BaseDockLayout.TopContent>
+
+            <fox_layout:BaseDockLayout.MainContent>
+                <Grid>
+                    <dxlc:DataLayoutControl AutoGenerateItems="False" CurrentItem="{Binding Entity}" >
+                        
+                        <dxlc:LayoutGroup Orientation="Vertical">
+                            <dxlc:DataLayoutItem Binding="{Binding UserName,UpdateSourceTrigger=PropertyChanged}"/>
+                            <dxlc:LayoutGroup Header="Name">
+                                <dxlc:DataLayoutItem Binding="{Binding Name,UpdateSourceTrigger=PropertyChanged}"/>
+                                <dxlc:DataLayoutItem Binding="{Binding Surname,UpdateSourceTrigger=PropertyChanged}"/>
+                            </dxlc:LayoutGroup>
+                            <dxlc:DataLayoutItem Binding="{Binding EmailAddress,UpdateSourceTrigger=PropertyChanged}"/>
+                            <dxlc:LayoutGroup Header="Password">
+                                <dxlc:DataLayoutItem Binding="{Binding Password,UpdateSourceTrigger=PropertyChanged}"/>
+                                <dxlc:DataLayoutItem Binding="{Binding ConfirmPassword,UpdateSourceTrigger=PropertyChanged}"/>
+                            </dxlc:LayoutGroup>
+                            <dxlc:DataLayoutItem Binding="{Binding IsActive,UpdateSourceTrigger=PropertyChanged}"/>
+                        </dxlc:LayoutGroup>
+                        
+                        <dxlc:LayoutGroup Header="所属角色">
+                            <ListBox>
+                                <ListBoxItem>
+                                    <dxe:CheckEdit Content="tet"></dxe:CheckEdit>
+                                </ListBoxItem>
+                            </ListBox>
+                        </dxlc:LayoutGroup>
+
+                    </dxlc:DataLayoutControl>
+                </Grid>
+            </fox_layout:BaseDockLayout.MainContent>
+        </fox_layout:BaseDockLayout>
+
+    </Grid>
+</UserControl>

@@ -13,7 +13,7 @@ namespace IFoxtec.WPF.Common.ViewModels
     /// <summary>
     /// 文档基础VM
     /// </summary>
-    public class BaseDocumentViewModel : ViewModelBase, ISupportParameter, IDocumentContent, ISupportParentViewModel, IBaseViewModel
+    public class BaseDocumentViewModel : BaseViewModel, ISupportParameter, IDocumentContent, ISupportParentViewModel, IBaseViewModel
     {
         static object SyncRoot = new object();
 

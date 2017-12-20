@@ -269,6 +269,9 @@
     <Compile Include="Common\ViewModels\BaseDocumentViewModel.cs" />
     <Compile Include="Common\ViewModels\BaseFormViewModel.cs" />
     <Compile Include="Common\ViewModels\BaseGridFormViewModel.cs" />
+    <Compile Include="Common\ViewModels\BaseViewModel.cs" />
+    <Compile Include="Module\Account\Contract\ISessionContract.cs" />
+    <Compile Include="Module\Account\Contract\SessionContract.cs" />
     <Compile Include="Module\Home\BaseHomeViewModel.cs" />
     <Compile Include="Common\ViewModels\BaseListViewModel.cs" />
     <Compile Include="Common\ViewModels\IBaseListViewModel.cs" />
@@ -293,6 +296,14 @@
     <Page Include="Module\Home\LockView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Module\Users\UserListView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Module\Users\CreateUserView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Themes\Generic.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -325,11 +336,20 @@
     <Compile Include="Module\Home\LockViewModel.cs" />
     <Compile Include="Module\MappingConfig.cs" />
     <Compile Include="Module\PageViewIndex.cs" />
-    <Compile Include="Module\Users\Contract\Dto\CreateUserDto.cs" />
-    <Compile Include="Module\Users\Contract\Dto\UpdateUserDto.cs" />
-    <Compile Include="Module\Users\Contract\Dto\UserDto.cs" />
     <Compile Include="Module\Users\Contract\IUserContract.cs" />
     <Compile Include="Module\Users\Contract\UserContract.cs" />
+    <Compile Include="Module\Users\Models\RoleItemModel.cs" />
+    <Compile Include="Module\Users\Models\UserModel.cs" />
+    <Compile Include="Module\Users\Models\CreateUserModel.cs" />
+    <Compile Include="Module\Users\Models\UpdateUserModel.cs" />
+    <Compile Include="Module\Users\UserListView.xaml.cs">
+      <DependentUpon>UserListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Module\Users\UserListViewModel.cs" />
+    <Compile Include="Module\Users\CreateUserView.xaml.cs">
+      <DependentUpon>CreateUserView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Module\Users\CreateUserViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -371,6 +391,7 @@
       <Name>IFoxtec.Application</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

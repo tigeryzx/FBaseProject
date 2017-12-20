@@ -3,6 +3,7 @@ using Castle.Windsor;
 using IFoxtec.Facade.WebApi;
 using IFoxtec.WPF.Common.Config;
 using IFoxtec.WPF.Common.Contract;
+using IFoxtec.WPF.Common.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,6 +28,12 @@ namespace IFoxtec.WPF.Common.IOC
                 .WithServiceDefaultInterfaces()
                 .LifestyleTransient());
 
+            // 注册ViewModel
+            this._container.Register(Classes.FromThisAssembly()
+                .BasedOn<BaseViewModel>()
+                .WithServiceSelf()
+                .LifestyleTransient());
+
             // 注册配置管理器
             this._container.Register(Classes.From(typeof(MemoryConfigManager))
                 .Pick()
@@ -47,6 +54,11 @@ namespace IFoxtec.WPF.Common.IOC
         public T Resolve<T>()
         {
             return _container.Resolve<T>();
+        }
+
+        public object Resolve(Type type)
+        {
+            return _container.Resolve(type);
         }
 
         public void Dispose()

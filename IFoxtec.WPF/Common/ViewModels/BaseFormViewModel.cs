@@ -550,7 +550,7 @@ namespace IFoxtec.WPF.Common.ViewModels
                 ICollection<ValidationResult> validationResults = new List<ValidationResult>();
                 ValidationContext validationContext = new ValidationContext(this.Entity);
                 // 可单独验证属性 MemberName = propertyName
-                if (!Validator.TryValidateObject(this.Entity, validationContext, validationResults))
+                if (!Validator.TryValidateObject(this.Entity, validationContext, validationResults, true))
                 {
                     foreach (ValidationResult validationResult in validationResults)
                     {

@@ -15,6 +15,8 @@ namespace IFoxtec.WPF.Common.Contract
         where TUpdateInput : IEntityDto<TPrimaryKey>
         where TGetInput : IEntityDto<TPrimaryKey>
         where TDeleteInput : IEntityDto<TPrimaryKey>
+        where TGetAllInput : IPagedResultRequest
+
     {
         protected ApiHelper _api;
 
@@ -56,6 +58,7 @@ namespace IFoxtec.WPF.Common.Contract
         where TEntityDto : IEntityDto<TPrimaryKey>
         where TUpdateInput : IEntityDto<TPrimaryKey>
         where TGetInput : IEntityDto<TPrimaryKey>
+        where TGetAllInput : IPagedResultRequest
     {
         public BaseCrudContract(string apiRootPath) : base(apiRootPath) { }
     }
@@ -66,6 +69,7 @@ namespace IFoxtec.WPF.Common.Contract
     public class BaseCrudContract<TEntityDto, TPrimaryKey, TGetAllInput, TCreateInput, TUpdateInput> : BaseCrudContract<TEntityDto, TPrimaryKey, TGetAllInput, TCreateInput, TUpdateInput, EntityDto<TPrimaryKey>, EntityDto<TPrimaryKey>>
         where TEntityDto : IEntityDto<TPrimaryKey>
         where TUpdateInput : IEntityDto<TPrimaryKey>
+        where TGetAllInput : IPagedResultRequest
     {
         public BaseCrudContract(string apiRootPath) : base(apiRootPath) { }
     }

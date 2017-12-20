@@ -1,6 +1,8 @@
-﻿using DevExpress.Mvvm;
+﻿using Abp.Application.Services.Dto;
+using DevExpress.Mvvm;
 using IFoxtec.Common.WPF.BaseModel;
 using IFoxtec.WPF.Common.BaseModel;
+using IFoxtec.WPF.Common.Contract;
 using IFoxtec.WPF.Common.Services;
 using System;
 using System.Collections.Generic;
@@ -13,19 +15,29 @@ namespace IFoxtec.WPF.Common.ViewModels
     /// <summary>
     /// 列表页基础VM
     /// </summary>
-    /// <typeparam name="TEntity">对象类型</typeparam>
+    /// <typeparam name="TUIEntity">对象类型</typeparam>
     /// <typeparam name="TPrimaryKey">主键类型</typeparam>
-    public abstract class BaseListViewModel<TEntity, TPrimaryKey> : 
+    public class BaseListViewModel<TUIEntity, TPrimaryKey> :
         BaseDocumentViewModel, IBaseListViewModel
-        where TEntity : BaseEntity<TPrimaryKey>
-        where TPrimaryKey :struct
+        where TUIEntity: BaseEntity<TPrimaryKey>
+        where TPrimaryKey : struct
     {
+
+        public BaseListViewModel()
+        {
+            // https://www.devexpress.com/Support/Center/Example/Details/E3139/mvvm-how-to-bind-the-gridcontrol-s-selected-rows-to-a-property-in-a-viewmodel
+            InitCommands();
+        }
+
         /// <summary>
         /// 加载数据源
         /// </summary>
-        public abstract ObservableCollection<TEntity> LoadEntities();
+        public virtual ObservableCollection<TUIEntity> LoadEntities()
+        {
+            return null;
+        }
 
-        protected ObservableCollection<TEntity> entities;
+        protected ObservableCollection<TUIEntity> entities;
 
         /// <summary>
         /// 异步加载
@@ -35,11 +47,11 @@ namespace IFoxtec.WPF.Common.ViewModels
         {
             var selectedEntityCallback = GetSelectedEntityCallback();
 
-            return SyncExecute<ObservableCollection<TEntity>>(() =>
+            return SyncExecute<ObservableCollection<TUIEntity>>(() =>
             {
                 return this.LoadEntities();
             },
-            (x)=>
+            (x) =>
             {
                 if (!x.IsFaulted)
                 {
@@ -48,12 +60,6 @@ namespace IFoxtec.WPF.Common.ViewModels
                     this.OnEntitiesAssigned(selectedEntityCallback);
                 }
             });
-        }
-
-        public BaseListViewModel()
-        {
-            InitCommands();
-            // https://www.devexpress.com/Support/Center/Example/Details/E3139/mvvm-how-to-bind-the-gridcontrol-s-selected-rows-to-a-property-in-a-viewmodel
         }
 
         protected virtual void InitCommands()
@@ -66,7 +72,7 @@ namespace IFoxtec.WPF.Common.ViewModels
         }
 
 
-        protected virtual void OnEntitiesAssigned(Func<TEntity> getSelectedEntityCallback)
+        protected virtual void OnEntitiesAssigned(Func<TUIEntity> getSelectedEntityCallback)
         {
             var selectedItem = getSelectedEntityCallback();
             if (selectedItem != null)
@@ -75,22 +81,23 @@ namespace IFoxtec.WPF.Common.ViewModels
                 this.SelEntities.Add(selectedItem);
                 this.SelEntity = selectedItem;
             }
-            
+
         }
 
         /// <summary>
         /// 获取选择行回调
         /// </summary>
         /// <returns></returns>
-        protected virtual Func<TEntity> GetSelectedEntityCallback()
+        protected virtual Func<TUIEntity> GetSelectedEntityCallback()
         {
-            
+
             var selectedItemId = this.SelEntity != null ? this.SelEntity.Id : default(TPrimaryKey);
-            return () => {
+            return () =>
+            {
                 if (this.entities == null)
-                    return null;
+                    return default(TUIEntity);
                 return this.entities.SingleOrDefault(x => EqualityComparer<TPrimaryKey>.Default.Equals(x.Id, selectedItemId));
-            }; 
+            };
         }
 
         /// <summary>
@@ -223,7 +230,7 @@ namespace IFoxtec.WPF.Common.ViewModels
         /// 编辑时
         /// </summary>
         /// <param name="entity"></param>
-        protected virtual void OnEdit(TEntity entity)
+        protected virtual void OnEdit(TUIEntity entity)
         {
             CreateDocParam param = GetEditDocParam();
             if (param == null)
@@ -258,15 +265,15 @@ namespace IFoxtec.WPF.Common.ViewModels
         {
             // TODO: 异步线程删除不刷新问题
             OnDelete(this.SelEntities);
-            SyncLoad();            
+            SyncLoad();
         }
 
         /// <summary>
         /// 删除时
         /// </summary>
-        protected virtual void OnDelete(IList<TEntity> entitys)
+        protected virtual void OnDelete(IList<TUIEntity> entitys)
         {
-           
+
         }
 
         #endregion
@@ -292,7 +299,7 @@ namespace IFoxtec.WPF.Common.ViewModels
         protected virtual void OnRefresh()
         {
             SyncLoad();
-        } 
+        }
         #endregion
 
         #region 打印报表
@@ -329,7 +336,7 @@ namespace IFoxtec.WPF.Common.ViewModels
         /// <summary>
         /// 列表数据源
         /// </summary>
-        public ObservableCollection<TEntity> Entities
+        public ObservableCollection<TUIEntity> Entities
         {
             get
             {
@@ -339,12 +346,12 @@ namespace IFoxtec.WPF.Common.ViewModels
             }
         }
 
-        private TEntity _SelEntity;
+        private TUIEntity _SelEntity;
 
         /// <summary>
         /// 选择行
         /// </summary>
-        public TEntity SelEntity
+        public TUIEntity SelEntity
         {
             get
             {
@@ -356,7 +363,7 @@ namespace IFoxtec.WPF.Common.ViewModels
             }
         }
 
-        private ObservableCollection<TEntity> _SelEntities = new ObservableCollection<TEntity>();
+        private ObservableCollection<TUIEntity> _SelEntities = new ObservableCollection<TUIEntity>();
 
         /// <summary>
         /// 选中行集合
@@ -364,7 +371,7 @@ namespace IFoxtec.WPF.Common.ViewModels
         /// <remarks>
         /// 坑爹有BUG，集合需要手动写
         /// </remarks>
-        public ObservableCollection<TEntity> SelEntities
+        public ObservableCollection<TUIEntity> SelEntities
         {
             get
             {

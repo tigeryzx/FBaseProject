@@ -17,6 +17,7 @@ namespace IFoxtec.WPF.Common.Contract
         where TUpdateInput : IEntityDto<TPrimaryKey>
         where TGetInput : IEntityDto<TPrimaryKey>
         where TDeleteInput : IEntityDto<TPrimaryKey>
+        where TGetAllInput : IPagedResultRequest
     {
         Task<TEntityDto> Create(TCreateInput input);
         Task Delete(TDeleteInput input);
@@ -36,6 +37,8 @@ namespace IFoxtec.WPF.Common.Contract
         where TEntityDto : IEntityDto<TPrimaryKey>
         where TUpdateInput : IEntityDto<TPrimaryKey>
         where TGetInput : IEntityDto<TPrimaryKey>
+        where TGetAllInput : IPagedResultRequest
+
     {
 
     }
@@ -50,6 +53,7 @@ namespace IFoxtec.WPF.Common.Contract
         ICrudContract<TEntityDto, TPrimaryKey, TGetAllInput, TCreateInput, TUpdateInput, EntityDto<TPrimaryKey>, EntityDto<TPrimaryKey>>
         where TEntityDto : IEntityDto<TPrimaryKey>
         where TUpdateInput : IEntityDto<TPrimaryKey>
+        where TGetAllInput : IPagedResultRequest
     {
 
     }
