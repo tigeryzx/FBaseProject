@@ -10,6 +10,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:fox_layout="clr-namespace:IFoxtec.WPF.Common.Controls.Layout"
     xmlns:fox_ext="clr-namespace:IFoxtec.WPF.Common.Extensions"
+    xmlns:fox_convert="clr-namespace:IFoxtec.WPF.Common.Converter"
     xmlns:ViewModels="clr-namespace:IFoxtec.WPF.Module.Users"
     x:Class="IFoxtec.WPF.Module.Users.CreateUserView"
     mc:Ignorable="d"
@@ -27,11 +28,6 @@
                                 <dxb:BarButtonItem Command="{Binding SaveAndCloseCommand}" Style="{StaticResource BarButton_SaveAndClose}" />
                                 <dxb:BarButtonItem Command="{Binding SaveAndCreateCommand}" Style="{StaticResource BarButton_SaveAndCreate}"/>
                                 <dxb:BarButtonItem Command="{Binding ResetCommand}" Style="{StaticResource BarButton_Reset}"/>
-                                <dxb:BarButtonItem Style="{StaticResource BarButton_Delete}">
-                                    <dxmvvm:Interaction.Behaviors>
-                                        <dxmvvm:ConfirmationBehavior MessageText="是否确认操作?" MessageTitle="提示" Command="{Binding DeleteCommand}" MessageIcon="Question" MessageDefaultResult="No"/>
-                                    </dxmvvm:Interaction.Behaviors>
-                                </dxb:BarButtonItem>
                                 <dxb:BarButtonItem Command="{Binding CloseCommand}" Style="{StaticResource BarButton_Close}"/>
                             </dxr:RibbonPageGroup>
                         </dxr:RibbonPage>
@@ -41,8 +37,11 @@
 
             <fox_layout:BaseDockLayout.MainContent>
                 <Grid>
-                    <dxlc:DataLayoutControl AutoGenerateItems="False" CurrentItem="{Binding Entity}" >
-                        
+                    <Grid.Resources>
+                        <fox_convert:NegateConverter x:Key="BoolConverter"></fox_convert:NegateConverter>
+                    </Grid.Resources>
+                    <dxlc:DataLayoutControl AutoGenerateItems="False" CurrentItem="{Binding Entity}" IsEnabled="{Binding Path=IsView,Converter={StaticResource BoolConverter}}">
+
                         <dxlc:LayoutGroup Orientation="Vertical">
                             <dxlc:DataLayoutItem Binding="{Binding UserName,UpdateSourceTrigger=PropertyChanged}"/>
                             <dxlc:LayoutGroup Header="Name">
@@ -57,11 +56,18 @@
                             <dxlc:DataLayoutItem Binding="{Binding IsActive,UpdateSourceTrigger=PropertyChanged}"/>
                         </dxlc:LayoutGroup>
                         
-                        <dxlc:LayoutGroup Header="所属角色">
-                            <ListBox>
-                                <ListBoxItem>
-                                    <dxe:CheckEdit Content="tet"></dxe:CheckEdit>
-                                </ListBoxItem>
+                        <dxlc:LayoutGroup View="GroupBox" Header="所属角色">
+                            <ListBox ItemsSource="{Binding Path=Roles}">
+                                <ListBox.Template>
+                                    <ControlTemplate TargetType="ListBox">
+                                        <WrapPanel Orientation="Horizontal" IsItemsHost="True"></WrapPanel>
+                                    </ControlTemplate>
+                                </ListBox.Template>
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <dxe:CheckEdit Content="{Binding Path=DisplayName}" IsChecked="{Binding Path=IsChecked}"></dxe:CheckEdit>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
                             </ListBox>
                         </dxlc:LayoutGroup>
 

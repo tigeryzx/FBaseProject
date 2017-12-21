@@ -28,6 +28,7 @@ namespace IFoxtec.WPF.Common.BaseModel
     public enum FormStatus
     {
         Create,
-        Edit
+        Edit,
+        View
     }
 }

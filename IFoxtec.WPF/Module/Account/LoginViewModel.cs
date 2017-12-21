@@ -32,6 +32,9 @@ namespace IFoxtec.WPF.Module.Account
         {
             this._accountContract = accountContract;
 
+            this.UsernameOrEmailAddress = "admin";
+            this.Password = "123qwe";
+
             InitCommand();
 
             InitData();

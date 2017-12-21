@@ -2,6 +2,7 @@
 using IFoxtec.WPF.Common.BaseModel;
 using IFoxtec.WPF.Common.Helper;
 using IFoxtec.WPF.Common.Messager;
+using IFoxtec.WPF.Common.UIThread;
 using IFoxtec.WPF.Common.ViewModels.PartVm;
 using System;
 using System.Collections.Generic;
@@ -178,10 +179,14 @@ namespace IFoxtec.WPF.Common.ViewModels
         {
             var title = string.Empty;
 
-            if (this.FormStatus == BaseModel.FormStatus.Create)
+            this.IsView = this.FormStatus == FormStatus.View;
+
+            if (this.FormStatus == FormStatus.Create)
                 title = "创建";
-            else if (this.FormStatus == BaseModel.FormStatus.Edit)
+            else if (this.FormStatus == FormStatus.Edit)
                 title = "编辑";
+            else if (this.IsView)
+                title = "查看";
 
             this.DocExtTitle = title;
         }
@@ -194,12 +199,46 @@ namespace IFoxtec.WPF.Common.ViewModels
             this.SaveCommand = new DelegateCommand(SaveFun, CanSave);
             this.SaveAndCloseCommand = new DelegateCommand(SaveAndCloseFun, CanSave);
             this.SaveAndCreateCommand = new DelegateCommand(SaveAndCreateFun, CanSave);
-            this.ResetCommand = new DelegateCommand(ResetFun, () => { return this.IsChange; });
+            this.ResetCommand = new DelegateCommand(ResetFun, () => { return this.IsChange && !this.IsView; });
             this.CloseCommand = new DelegateCommand(CloseFun);
             this.DeleteCommand = new DelegateCommand(DeleteFun, CanDelete);
         }
 
         #region 属性
+
+        /// <summary>
+        /// 是否為查看
+        /// </summary>
+        public bool IsView
+        {
+            get
+            {
+                return GetProperty(() => this.IsView);
+            }
+            set
+            {
+                SetProperty(() => this.IsView, value);
+            }
+        }
+
+        private FormViewSetting _Setting;
+
+        /// <summary>
+        /// 设定
+        /// </summary>
+        protected FormViewSetting Setting
+        {
+            get
+            {
+                if (this._Setting == null)
+                    this._Setting = new FormViewSetting();
+                return this._Setting;
+            }
+            set
+            {
+                this._Setting = value;
+            }
+        }
 
         /// <summary>
         /// 第一次加载的对象，用于判断是否保存
@@ -292,7 +331,7 @@ namespace IFoxtec.WPF.Common.ViewModels
         /// <returns></returns>
         protected virtual bool CanDelete()
         {
-            return this.FormStatus == BaseModel.FormStatus.Edit;
+            return this.FormStatus == BaseModel.FormStatus.Edit && !this.IsView;
         }
 
         /// <summary>
@@ -301,6 +340,9 @@ namespace IFoxtec.WPF.Common.ViewModels
         /// <returns></returns>
         protected virtual bool CanSave()
         {
+            if (this.IsView)
+                return false;
+
             var change = this.IsChange;
 
             // Entity是否验证通过
@@ -346,19 +388,29 @@ namespace IFoxtec.WPF.Common.ViewModels
         /// </summary>
         private void SaveFun()
         {
-            base.SyncExecute(() =>
+            ThreadHelper.StartTaskAndCallbackUI(()=> 
             {
                 return OnSave();
-            }, (x) => {
+            }
+            ,(x)=> 
+            {
                 this.Entity = x.Result;
 
                 if (this.FormStatus == BaseModel.FormStatus.Create)
-                    this.FormStatus = BaseModel.FormStatus.Edit;
+                    this.FormStatus = this.Setting.AfterCreateSwithStatus;
                 this.RefreshOldEntitySerialInfo();
                 this.RefreshTitle();
 
                 SendReloadMessage();
+
             });
+
+            //base.SyncExecute(() =>
+            //{
+            //    return OnSave();
+            //}, (x) => {
+
+            //});
         }
 
         /// <summary>
@@ -579,5 +631,16 @@ namespace IFoxtec.WPF.Common.ViewModels
         }
 
         #endregion
+
+        /// <summary>
+        /// 表单VM设定
+        /// </summary>
+        public class FormViewSetting
+        {
+            /// <summary>
+            /// 在创建之后切换切换到的状态 默认<see cref="FormStatus.View"/>
+            /// </summary>
+            public BaseModel.FormStatus AfterCreateSwithStatus = FormStatus.View;
+        }
     }
 }

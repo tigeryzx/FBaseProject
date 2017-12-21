@@ -49,11 +49,17 @@ namespace IFoxtec.WPF.Module.Users
         {
             if (this.FormStatus == Common.BaseModel.FormStatus.Create)
             {
-                var userInfo = Mapper.Map<CreateUserDto>(this.Entity);
+                var userInfo = Mapper.Map<CreateUserDto>(SetCheckedItem(this.Entity));
                 this._userContract.Create(userInfo);
                 return this.Entity;
             }
             return null;
+        }
+
+        protected CreateUserModel SetCheckedItem(CreateUserModel model)
+        {
+            model.RoleNames = this.Roles.Where(x => x.IsChecked).Select(x => x.Name).ToArray();
+            return model;
         }
 
         #endregion
