@@ -57,18 +57,19 @@
                         </dxlc:LayoutGroup>
                         
                         <dxlc:LayoutGroup View="GroupBox" Header="所属角色">
-                            <ListBox ItemsSource="{Binding Path=Roles}">
-                                <ListBox.Template>
-                                    <ControlTemplate TargetType="ListBox">
-                                        <WrapPanel Orientation="Horizontal" IsItemsHost="True"></WrapPanel>
-                                    </ControlTemplate>
-                                </ListBox.Template>
-                                <ListBox.ItemTemplate>
+
+                            <ItemsControl ItemsSource="{Binding Path=Roles}">
+                                <ItemsControl.ItemTemplate>
                                     <DataTemplate>
-                                        <dxe:CheckEdit Content="{Binding Path=DisplayName}" IsChecked="{Binding Path=IsChecked}"></dxe:CheckEdit>
+                                        <dxe:CheckEdit Margin="0,0,5,0" Content="{Binding Path=DisplayName}" IsChecked="{Binding Path=IsChecked}"></dxe:CheckEdit>
                                     </DataTemplate>
-                                </ListBox.ItemTemplate>
-                            </ListBox>
+                                </ItemsControl.ItemTemplate>
+                                <ItemsControl.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <WrapPanel></WrapPanel>
+                                    </ItemsPanelTemplate>
+                                </ItemsControl.ItemsPanel>
+                            </ItemsControl>
                         </dxlc:LayoutGroup>
 
                     </dxlc:DataLayoutControl>
